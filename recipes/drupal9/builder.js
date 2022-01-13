@@ -17,7 +17,7 @@ module.exports = {
     confSrc: __dirname,
     defaultFiles: {},
     php: '8.0',
-    drush: '^10',
+    drush: '^11',
   },
   builder: (parent, config) => class LandoDrupal9 extends parent {
     constructor(id, options = {}) {
