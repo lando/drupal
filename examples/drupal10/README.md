@@ -35,9 +35,9 @@ Run the following commands to validate things are rolling as they should.
 cd drupal10
 lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 10"
 
-# Should use 8.0 as the default php version
+# Should use 8.1 as the default php version
 cd drupal10
-lando php -v | grep "PHP 8.0"
+lando php -v | grep "PHP 8.1"
 
 # Should be running apache 2.4 by default
 cd drupal10
