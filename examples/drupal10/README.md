@@ -18,9 +18,11 @@ lando poweroff
 rm -rf drupal10 && mkdir -p drupal10 && cd drupal10
 lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-10.0.x-dev.tar.gz --remote-options="--strip-components 1" --recipe drupal10 --webroot . --name lando-drupal10
 
+lando init --source remote --remote-url https://www.drupal.org/download-latest/tar.gz --remote-options="--strip-components 1" --recipe drupal9 --webroot . --name lando-drupal9
+
+
 # Should start up successfully
 cd drupal10
-lando composer install
 echo -e "\nplugins:\n  \"@lando/drupal/\": ./../../" >> .lando.yml
 lando start
 ```
