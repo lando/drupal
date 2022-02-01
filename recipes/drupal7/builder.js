@@ -12,7 +12,7 @@ module.exports = {
   config: {
     confSrc: __dirname,
     defaultFiles: {},
-    php: '7.2',
+    php: '7.4',
   },
   builder: (parent, config) => class LandoDrupal7 extends parent {
     constructor(id, options = {}) {
