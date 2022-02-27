@@ -30,30 +30,30 @@ module.exports = {
     sidebar: [
       {
         text: 'Overview',
-        link: '/index.md',
+        link: '/index.html',
       },
-      '/getting-started.md',
-      '/config.md',
-      '/tooling.md',
-      '/legacy-versions.md',
+      '/getting-started.html',
+      '/config.html',
+      '/tooling.html',
+      '/legacy-versions.html',
       {
         text: 'Guides',
         collapsible: true,
         children: [
           {
             text: 'Landoifying an existing Drupal site',
-            link: '/landoify-d7.md',
+            link: '/landoify-d7.html',
           },
           {
             text: 'Running Drupal multisite',
-            link: '/drupal-multisite.md',
+            link: '/drupal-multisite.html',
           },
         ],
       },
-      '/support.md',
+      '/support.html',
       {text: 'Examples', link: 'https://github.com/lando/drupal/tree/main/examples'},
       {text: 'Release Notes', link: 'https://github.com/lando/drupal/releases'},
-      '/development.md',
+      '/development.html',
     ],
   },
 };
