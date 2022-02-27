@@ -139,7 +139,7 @@ Make sure the alias file exists within the drush folder in your app. An example 
       |-- yoursite.aliases.drushrc.php
 ```
 
-For info on how to setup your alias, please refer to the following [link](https://www.drupal.org/node/1401522) or see this [example](https://raw.githubusercontent.com/drush-ops/drush/master/examples/example.aliases.yml).
+For info on how to setup your alias, please refer to the following [link](https://www.drupal.org/node/1401522) or see this [example](https://raw.githubusercontent.com/drush-ops/drush/8.x/examples/example.aliases.drushrc.php).
 
 Then configure the following [build step](https://docs.lando.dev/config/services.md#build-steps) in your [Landofile](https://docs.lando.dev/config/lando.md) and `lando rebuild`.
 
@@ -239,9 +239,9 @@ config:
 
 #### Using a site-local Drush
 
-While Lando will globally install Drush for you it is increasingly common and in some cases a straight-up best practice to [install a site-local Drush](https://www.drush.org/install/) by requiring it in your projects `composer.json` file.
+While Lando will globally install Drush for you it is increasingly common and in some cases a straight-up best practice to [install a site-local Drush](https://www.drush.org/latest/install/) by requiring it in your projects `composer.json` file.
 
-Because of how Lando's [php service](https://docs.lando.dev/php) sets up its [`PATH`](https://docs.lando.dev/php/caveats.md) this means that if you have indeed installed Drush on your own via `composer` Lando will use yours over its own.
+Because of how Lando's [php service](https://docs.lando.dev/php) sets up its [`PATH`](https://docs.lando.dev/php/caveats.html) this means that if you have indeed installed Drush on your own via `composer` Lando will use yours over its own.
 
 Said more explicitly: **if you've required `drush` via `composer` in your application then this recipe will use your `drush` and not the one you've specified in this recipes config.**
 

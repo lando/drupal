@@ -55,7 +55,7 @@ Once you do, Lando will be able to use `drush` normally.
 
 #### Build steps
 
-Once `drush` is listed in your `composer.json` it is also recommended to configure a [build step](https://docs.lando.dev/config/services.md#build-steps) to automatically install Drush before your app starts up. This ensures `drush` is available after `lando start` and during any other build steps or events.
+Once `drush` is listed in your `composer.json` it is also recommended to configure a [build step](https://docs.lando.dev/config/services.html#build-steps) to automatically install Drush before your app starts up. This ensures `drush` is available after `lando start` and during any other build steps or events.
 
 **Automatically composer install before my app starts**
 
@@ -67,7 +67,7 @@ services:
       - composer install
 ```
 
-If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor` you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/config/tooling.md#overriding) and specify an absolute path to your Drush.
+If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor` you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/config/tooling.html#overriding) and specify an absolute path to your Drush.
 
 ```yaml
 tooling:
@@ -96,7 +96,7 @@ tooling:
 
 ## Using xdebug
 
-This is just a passthrough option to the [xdebug setting](./php.md#toggling-xdebug) that exists on all our [php services](./php.md). The `tl;dr` is `xdebug: true` enables and configures the php xdebug extension and `xdebug: false` disables it.
+This is just a passthrough option to the [xdebug setting](https://docs.lando.dev/php.html#toggling-xdebug) that exists on all our [php services](https://docs.lando.dev/php.html). The `tl;dr` is `xdebug: true` enables and configures the php xdebug extension and `xdebug: false` disables it.
 
 ```yaml
 recipe: drupal9
@@ -104,7 +104,7 @@ config:
   xdebug: true|false
 ```
 
-However, for more information we recommend you consult the [php service documentation](./php.md).
+However, for more information we recommend you consult the [php service documentation](https://docs.lando.dev/php.html).
 
 
 ## Importing Your Database
@@ -122,4 +122,4 @@ curl -fsSL -o database.sql.gz "https://url.to.my.db/database.sql.gz"
 lando db-import database.sql.gz
 ```
 
-You can learn more about the `db-import` command [over here](https://docs.lando.dev/guides/db-import.md)
+You can learn more about the `db-import` command [over here](https://docs.lando.dev/guides/db-import.html)
