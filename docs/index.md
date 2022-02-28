@@ -1,7 +1,7 @@
 ---
 title: Drupal Lando Plugin
 description: Use Drupal on Lando for local development; powered by Docker and Docker Compose, config PHP version, swap db backends or webserver, use Composer, Drush, Xdebug and custom config files, oh and also import and exports databases.
-next: ./config.html
+next: ./getting-started.html
 ---
 
 # Drupal
