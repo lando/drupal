@@ -6,8 +6,6 @@ description: Lando docs for legacy Drupal versions
 
 The configuration for Drupal 8, Drupal 7 and Drupal 6 is *mostly* the same as Drupal 9+. This doc is intended to call out the notable deviations.
 
-[[toc]]
-
 ## Drupal 8
 
 ### Quickstart
@@ -80,13 +78,13 @@ config:
 
 #### Using a site-local Drush
 
-While Lando will globally install Drush for you, it is increasingly common and in some cases a straight-up best practice to [install a site-local Drush](https://www.drush.org/install/) by requiring it in your projects `composer.json` file.
+While Lando will globally install Drush for you, it is increasingly common and in some cases a straight-up best practice to [install a site-local Drush](https://www.drush.org/latest/install/) by requiring it in your projects `composer.json` file.
 
-Because of how Lando's [php service](https://docs.lando.dec/php) sets up its [`PATH`](https://docs.lando.dec/php/caveats.md), this means that if you have indeed installed Drush on your own via `composer` Lando will use yours over its own.
+Because of how Lando's [php service](https://docs.lando.dec/php) sets up its [`PATH`](https://docs.lando.dec/php/caveats.html), this means that if you have indeed installed Drush on your own via `composer` Lando will use yours over its own.
 
 Said more explicitly: **if you've required `drush` via `composer` in your application then this recipe will use your `drush` and not the one you've specified in this recipes config.**
 
-If you are using a site-local Drush, it is also recommended to configure a [build step](https://docs.lando.dev/config/services.md#build-steps) to automatically install Drush before your app starts up. This can prevent weird version mismatches and other issues if you are using Drush in other Lando automation like [events](https://docs.lando.dev/config/events.md).
+If you are using a site-local Drush, it is also recommended to configure a [build step](https://docs.lando.dev/config/services.html#build-steps) to automatically install Drush before your app starts up. This can prevent weird version mismatches and other issues if you are using Drush in other Lando automation like [events](https://docs.lando.dev/config/events.html).
 
 **Automatically composer install before my app starts**
 
@@ -98,7 +96,7 @@ services:
       - composer install
 ```
 
-If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor`, you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/config/tooling.md#overriding) and specify an absolute path to your Drush.
+If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor`, you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/config/tooling.html#overriding) and specify an absolute path to your Drush.
 
 ```yaml
 tooling:
@@ -141,7 +139,7 @@ Make sure the alias file exists within the drush folder in your app. An example 
 
 For info on how to setup your alias, please refer to the following [link](https://www.drupal.org/node/1401522) or see this [example](https://raw.githubusercontent.com/drush-ops/drush/8.x/examples/example.aliases.drushrc.php).
 
-Then configure the following [build step](https://docs.lando.dev/config/services.md#build-steps) in your [Landofile](https://docs.lando.dev/config/lando.md) and `lando rebuild`.
+Then configure the following [build step](https://docs.lando.dev/config/services.html#build-steps) in your [Landofile](https://docs.lando.dev/config) and `lando rebuild`.
 
 ```yml
 services:
@@ -155,7 +153,7 @@ services:
 
 If you are using a webroot besides `.`, you will need to remember to `cd` into that directory and run `lando drush` from there. This is because many site-specific `drush` commands will only run correctly if you run `drush` from a directory that also contains a Drupal site.
 
-If you are annoyed by having to `cd` into that directory every time you run a `drush` command, you can get around it by [overriding](https://docs.lando.dev/config/tooling.md#overriding) the `drush` tooling command in your [Landofile](https://docs.lando.dev/config/lando.md) so that Drush always runs from your `webroot`.
+If you are annoyed by having to `cd` into that directory every time you run a `drush` command, you can get around it by [overriding](https://docs.lando.dev/config/tooling.html#overriding) the `drush` tooling command in your [Landofile](https://docs.lando.dev/config) so that Drush always runs from your `webroot`.
 
 **Note that hard coding the `root` like this may have unforeseen and bad consequences for some `drush` commands such as `drush scr`.**
 
@@ -245,7 +243,7 @@ Because of how Lando's [php service](https://docs.lando.dev/php) sets up its [`P
 
 Said more explicitly: **if you've required `drush` via `composer` in your application then this recipe will use your `drush` and not the one you've specified in this recipes config.**
 
-If you are using a site-local Drush, it is also recommended to configure a [build step](https://docs.lando.dev/config/services.md#build-steps) to automatically install Drush before your app starts up. This can prevent weird version mismatches and other issues if you are using Drush in other Lando automation like [events](https://docs.lando.dev/config/events.md).
+If you are using a site-local Drush, it is also recommended to configure a [build step](https://docs.lando.dev/config/services.html#build-steps) to automatically install Drush before your app starts up. This can prevent weird version mismatches and other issues if you are using Drush in other Lando automation like [events](https://docs.lando.dev/config/events.html).
 
 **Automatically composer install before my app starts**
 
@@ -257,7 +255,7 @@ services:
       - composer install
 ```
 
-If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor` you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/config/tooling.md#overriding) and specify an absolute path to your Drush.
+If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor` you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/config/tooling.html#overriding) and specify an absolute path to your Drush.
 
 ```yaml
 tooling:
@@ -296,7 +294,7 @@ Make sure the alias file exists within the drush folder in your app. An example 
 
 For info on how to set up your alias, please refer to the following [link](https://www.drupal.org/node/1401522) or see this [example](https://raw.githubusercontent.com/drush-ops/drush/master/examples/example.aliases.yml).
 
-Then configure the following [build step](https://docs.lando.dev/config/services.md#build-steps) in your [Landofile](https://docs.lando.dev/config/lando.md) and `lando rebuild`.
+Then configure the following [build step](https://docs.lando.dev/config/services.html#build-steps) in your [Landofile](https://docs.lando.dev/config) and `lando rebuild`.
 
 ```yml
 services:
@@ -310,7 +308,7 @@ services:
 
 If you are using a webroot besides `.`, you will need to remember to `cd` into that directory and run `lando drush` from there. This is because many site-specific `drush` commands will only run correctly if you run `drush` from a directory that also contains a Drupal site.
 
-If you are annoyed by having to `cd` into that directory every time you run a `drush` command, you can get around it by [overriding](https://docs.lando.dev/config/tooling.md#overriding) the `drush` tooling command in your [Landofile](https://docs.lando.dev/config/lando.md) so that Drush always runs from your `webroot`.
+If you are annoyed by having to `cd` into that directory every time you run a `drush` command, you can get around it by [overriding](https://docs.lando.dev/config/tooling.html#overriding) the `drush` tooling command in your [Landofile](https://docs.lando.dev/config) so that Drush always runs from your `webroot`.
 
 **Note that hard coding the `root` like this may have unforeseen and bad consequences for some `drush` commands such as `drush scr`.**
 
@@ -395,7 +393,7 @@ config:
 
 If you are using a webroot besides `.`, you will need to remember to `cd` into that directory and run `lando drush` from there. This is because many site-specific `drush` commands will only run correctly if you run `drush` from a directory that also contains a Drupal site.
 
-If you are annoyed by having to `cd` into that directory every time you run a `drush` command, you can get around it by [overriding](https://docs.lando.dev/config/tooling.md#overriding) the `drush` tooling command in your [Landofile](https://docs.lando.dev/config/lando.md) so that Drush always runs from your `webroot`.
+If you are annoyed by having to `cd` into that directory every time you run a `drush` command, you can get around it by [overriding](https://docs.lando.dev/config/tooling.html#overriding) the `drush` tooling command in your [Landofile](https://docs.lando.dev/config) so that Drush always runs from your `webroot`.
 
 **Note that hard coding the `root` like this may have unforeseen and bad consequences for some `drush` commands such as `drush scr`.**
 

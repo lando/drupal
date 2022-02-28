@@ -5,9 +5,9 @@ description: Learn how to configure the Lando Drupal recipe.
 
 # Configuration
 
-While Lando [recipes](https://docs.lando.dev/config/recipes.md) set sane defaults so they work out of the box they are also [configurable](https://docs.lando.dev/config/recipes.md#config).
+While Lando [recipes](https://docs.lando.dev/config/recipes.html) set sane defaults so they work out of the box they are also [configurable](https://docs.lando.dev/config/recipes.html#config).
 
-Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/config/lando.md). If you are unsure about where this goes or what this means we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/config/recipes.md) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/config). If you are unsure about where this goes or what this means we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/config/recipes.html) to get a good handle on how the magicks work.
 
 ```yaml
 recipe: drupal9
@@ -26,7 +26,7 @@ config:
     vhosts: SEE BELOW
 ```
 
-Note that if the above config options are not enough all Lando recipes can be further [extended and overriden](https://docs.lando.dev/config/recipes.md#extending-and-overriding-recipes).
+Note that if the above config options are not enough all Lando recipes can be further [extended and overriden](https://docs.lando.dev/config/recipes.html#extending-and-overriding-recipes).
 
 ## Choosing a Drupal version
 
@@ -44,7 +44,7 @@ You can set `php` to any version that is available in our [php service](https://
 
 However, you should consult the [Drupal requirements](https://www.drupal.org/docs/system-requirements) to make sure that the version of `php` you choose is actually supported by the version of `drupal` you are running.
 
-Here is the [recipe config](https://docs.lando.dev/config/recipes.md#config) to set the Drupal 9 recipe to use `php` version `7.4`
+Here is the [recipe config](https://docs.lando.dev/config/recipes.html#config) to set the Drupal 9 recipe to use `php` version `7.4`
 
 ```yaml
 recipe: drupal9
@@ -64,7 +64,7 @@ config:
 
 ## Choosing a webserver
 
-By default this recipe will be served by the default version of our [apache](https://docs.lando.dev/apache) service but you can also switch this to use [`nginx`](./nginx.md). We *highly recommend* you check out both the [apache](https://docs.lando.dev/apache) and [nginx](https://docs.lando.dev/nginx) services before you change the default `via`.
+By default this recipe will be served by the default version of our [apache](https://docs.lando.dev/apache) service but you can also switch this to use [`nginx`](https://docs.lando.dev/nginx). We *highly recommend* you check out both the [apache](https://docs.lando.dev/apache) and [nginx](https://docs.lando.dev/nginx) services before you change the default `via`.
 
 #### With Apache (default)
 
@@ -124,7 +124,7 @@ config:
 
 ## Connecting to your database
 
-Lando will automatically set up a database with a user and password and also set an environment variables called [`LANDO INFO`](https://docs.lando.dev/guides/lando-info.md) that contains useful information about how your application can access other Lando services.
+Lando will automatically set up a database with a user and password and also set an environment variables called [`LANDO INFO`](https://docs.lando.dev/guides/lando-info.html) that contains useful information about how your application can access other Lando services.
 
 Here is the default database connection information for a Drupal 9 site. Note that the `host` is not `localhost` but `database`. Also note that you will want to replace `drupal9` if you are using a different major version of Drupal eg `drupal8` for Drupal 8.
 
@@ -139,7 +139,7 @@ port: 3306
 # port: 5432
 ```
 
-You can get also get the above information, and more, by using the [`lando info`](https://docs.lando.dev/cli/info.md) command.
+You can get also get the above information, and more, by using the [`lando info`](https://docs.lando.dev/cli/info.html) command.
 
 
 ## Using custom config files
