@@ -34,9 +34,9 @@ Run the following commands to validate things are rolling as they should.
 cd drupal7
 lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 7"
 
-# Should use 7.2 as the default php version
+# Should use 7.4 as the default php version
 cd drupal7
-lando php -v | grep "PHP 7.2"
+lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 cd drupal7
