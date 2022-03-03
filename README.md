@@ -1,6 +1,34 @@
-# Lando Drupal Plugin
+# Drupal Lando Plugin
 
-The Lando Drupal plugin recipe.
+This is the _official_ [Lando](https://lando.dev) plugin for [Drupal](https://www.drupal.org/). When installed it...
+
+* Allows users to run `drupal` cms
+* Allows users to configure `php` version from `5.3` all the way to `8.1`
+* Allows users to configure `webroot`
+* Allows users to configure web server to (`apache` or `nginx`)
+* Allows users to configure database backend to (`mariadb`, `mysql`, or `postgres`)
+* Allows users to configure `composer`
+* Allows users to run `drush` commands
+* Allows users to configure `xdebug`
+
+Of course, once a user is running their Drupal project with Lando they can take advantage of [all the other awesome development features](https://docs.lando.dev) Lando provides.
+
+## Basic Usage
+
+Add a `drupal9` recipe to your Landofile
+
+```yaml
+name: Drupal 9
+recipe: drupal9
+```
+
+For more info you should check out the [docs](https://docs.lando.dev/drupal):
+
+* [Getting Started](https://docs.lando.dev/drupal/getting-started.html)
+* [Configuration](https://docs.lando.dev/drupal/config.html)
+* [Tooling](https://docs.lando.dev/drupal/tooling.html)
+* [Examples](https://github.com/lando/drupal/tree/main/examples)
+* [Development](https://docs.lando.dev/drupal/development.html)
 
 ## Installation
 
