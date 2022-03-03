@@ -19,7 +19,7 @@ Try out the relevant commands below to spin up a new Landoified vanilla Drupal s
 :::: code-group DRUPAL
 ::: code-group-item DRUPAL 10
 ```bash:no-line-numbers
-# Initialize a drupal10 recipe using the latest Drupal 6 version
+# Initialize a drupal10 recipe using the latest Drupal 10 version
 mkdir my-first-drupal10-app \
   && cd my-first-drupal10-app \
   && lando init \
@@ -39,17 +39,14 @@ lando composer require drush/drush
 # Install drupal
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 
-# List information about this app.
-lando info
-
-# List information about this app.
+# List information about this app
 lando info
 ```
 :::
 <CodeGroupItem title="DRUPAL 9" active>
 
 ```bash:no-line-numbers
-# Initialize a drupal9 recipe using the latest Drupal 6 version
+# Initialize a drupal9 recipe using the latest Drupal 9 version
 mkdir my-first-drupal9-app \
   && cd my-first-drupal9-app \
   && lando init \
@@ -69,7 +66,7 @@ lando composer require drush/drush
 # Install drupal
 lando drush si --db-url=mysql://drupal9:drupal9@database/drupal9 -y
 
-# List information about this app.
+# List information about this app
 lando info
 ```
 
@@ -80,7 +77,7 @@ Or Landoify an existing Drupal site:
 
 ```bash:no-line-numbers
 cd /path/to/my/repo
-lando init --source=cwd --recipe drupal9
+lando init --source cwd --recipe drupal9
 ```
 
 If you are interested in EOL Drupal versions then check out our [legacy docs](./legacy-versions.md).
