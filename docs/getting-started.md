@@ -37,11 +37,8 @@ lando start
 lando composer require drush/drush
 
 # Install drupal
-lando drush site:install -y
-```
-Optionally, use `--db-url=mysql://drupal10:drupal10@database/drupal10` to customize [database backend](https://docs.lando.dev/drupal/config.html#connecting-to-your-database) connection.
+lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 
-```
 # List information about this app
 lando info
 ```
@@ -68,11 +65,8 @@ lando start
 lando composer require drush/drush
 
 # Install drupal
-lando drush site:install -y
-```
-Optionally, use `--db-url=mysql://drupal9:drupal9@database/drupal9` to customize [database backend](https://docs.lando.dev/drupal/config.html#connecting-to-your-database) connection.
+lando drush site:install --db-url=mysql://drupal9:drupal9@database/drupal9 -y
 
-```
 # List information about this app
 lando info
 ```
