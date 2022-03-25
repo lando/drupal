@@ -144,7 +144,7 @@ You can get also get the above information, and more, by using the [`lando info`
 
 ## Using custom config files
 
-You may need to override our [default Drupal config](https://github.com/lando/lando/tree/master/plugins/lando-recipes/recipes/drupal9) with your own.
+You may need to override our [default Drupal config](https://github.com/lando/drupal/tree/main/recipes) with your own.
 
 If you do this you must use files that exist inside your application and express them relative to your project root as below.
 
