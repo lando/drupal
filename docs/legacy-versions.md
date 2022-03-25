@@ -292,7 +292,7 @@ Make sure the alias file exists within the drush folder in your app. An example 
       |-- yoursite.aliases.drushrc.php
 ```
 
-For info on how to set up your alias, please refer to the following [link](https://www.drupal.org/node/1401522) or see this [example](https://raw.githubusercontent.com/drush-ops/drush/master/examples/example.aliases.yml).
+For info on how to set up your alias, please refer to the following [link](https://www.drupal.org/node/1401522) or see this [example](https://github.com/drush-ops/drush/blob/8.x/examples/example.aliases.drushrc.php).
 
 Then configure the following [build step](https://docs.lando.dev/config/services.html#build-steps) in your [Landofile](https://docs.lando.dev/config) and `lando rebuild`.
 
