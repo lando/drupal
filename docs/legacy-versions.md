@@ -37,8 +37,8 @@ lando info
 ```yaml
 recipe: drupal8
 config:
-  php: '7.2'
-  composer_version: '2.0.7'
+  php: '7.3'
+  composer_version: '2.2.12'
   via: apache:2.4
   webroot: .
   database: mysql:5.7
