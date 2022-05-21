@@ -112,7 +112,7 @@ lando --clear
 ::: code-group-item HYPERDRIVE
 ```bash:no-line-numbers
 # @TODO
-# @NOTE: This doesn't actaully work yet
+# @NOTE: This doesn't actually work yet
 hyperdrive install @lando/drupal
 ```
 ::::
