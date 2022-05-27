@@ -23,7 +23,7 @@ It's common in universities and other settings where you might want to share the
 To run Drupal multisite you need to do several things:
 
 1. Your `.lando.yml` will need proxies for each multisite in the appserver array
-2. The `settings.local.php` file within your subsite directory (ex: `docroot/sites/site1/`) needs settings to connect to the appropriate Lando-hosted database.
+2. The `local.settings.php` file within your subsite directory (ex: `docroot/sites/site1/`) needs settings to connect to the appropriate Lando-hosted database.
 3. You need Drush aliases pointing to your local. If you use Drupal console, you'll need to specify your uri (ex: `drupal --uri=http://site1.lndo.site cr all`).
 
 ## 1. Configure .lando.yml
