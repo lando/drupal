@@ -48,9 +48,9 @@ services:
       confd: .lando/mysql/conf.d
 ```
 
-## 2. Configure each subsite's local.settings.php
+## 2. Configure each subsite's settings.local.php
 
-Configure each subsite to include the default Lando config to connect to the database, along with specifying the appserver name you defined in `.lando.yml`. For example, in `docroot/sites/site1/settings/local.settings.php` you would include...
+Configure each subsite to include the default Lando config to connect to the database, along with specifying the appserver name you defined in `.lando.yml`. For example, in `docroot/sites/site1/settings/settings.local.php` you would include...
 
 ```php
 /**
@@ -71,11 +71,11 @@ $databases['default']['default']['host'] = 'site1';
 ```
 
 ::: warning If you're on Acquia...
-You must specify $_Server['PWD']=DRUPAL_ROOT if you use Drush 9 on Acquia (this may apply to some other hosts as well). Update your main `sites/default/settings.php` to tell our local Drupal to use the `/settings/local.settings.php` within each subsite:
+You must specify $_Server['PWD']=DRUPAL_ROOT if you use Drush 9 on Acquia (this may apply to some other hosts as well). Update your main `sites/default/settings.php` to tell our local Drupal to use the `/settings/settings.local.php` within each subsite:
 
 ```php
 if (!key_exists('AH_SITE_ENVIRONMENT', $_ENV)) {
-  $environment_settings = __DIR__  . '/settings/local.settings.php';
+  $environment_settings = __DIR__  . '/settings/settings.local.php';
   if (file_exists($environment_settings)) {
     include $environment_settings;
   }
