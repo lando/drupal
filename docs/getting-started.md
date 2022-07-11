@@ -34,7 +34,7 @@ mkdir my-first-drupal10-app \
 lando start
 
 # Install a site local drush
-lando composer require drush/drush
+lando composer require -n drush/drush
 
 # Install drupal
 lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
@@ -62,7 +62,7 @@ mkdir my-first-drupal9-app \
 lando start
 
 # Install a site local drush
-lando composer require drush/drush
+lando composer require -n drush/drush
 
 # Install drupal
 lando drush site:install --db-url=mysql://drupal9:drupal9@database/drupal9 -y
