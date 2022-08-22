@@ -19,16 +19,17 @@ Try out the relevant commands below to spin up a new Landoified vanilla Drupal s
 :::: code-group DRUPAL
 ::: code-group-item DRUPAL 10
 ```bash:no-line-numbers
-# Initialize a drupal10 recipe using the latest Drupal 10 version
+# Initialize a drupal10 recipe
 mkdir my-first-drupal10-app \
   && cd my-first-drupal10-app \
   && lando init \
-    --source remote \
-    --remote-url https://ftp.drupal.org/files/projects/drupal-10.0.x-dev.tar.gz \
-    --remote-options="--strip-components 1" \
+    --source cwd \
     --recipe drupal10 \
-    --webroot . \
+    --webroot web \
     --name my-first-drupal10-app
+    
+# Create latest drupal10 project via composer
+lando composer create-project drupal/recommended-project:10.0.x-dev@dev tmp && cp -r tmp/. . && rm -rf tmp
 
 # Start it up
 lando start
@@ -47,16 +48,17 @@ lando info
 <CodeGroupItem title="DRUPAL 9" active>
 
 ```bash:no-line-numbers
-# Initialize a drupal9 recipe using the latest Drupal 9 version
+# Initialize a drupal9 recipe
 mkdir my-first-drupal9-app \
   && cd my-first-drupal9-app \
   && lando init \
-    --source remote \
-    --remote-url https://www.drupal.org/download-latest/tar.gz \
-    --remote-options="--strip-components 1" \
+    --source cwd \
     --recipe drupal9 \
-    --webroot . \
+    --webroot web \
     --name my-first-drupal9-app
+    
+# Create latest drupal9 project via composer
+lando composer create-project drupal/recommended-project:9.x tmp && cp -r tmp/. . && rm -rf tmp
 
 # Start it up
 lando start
