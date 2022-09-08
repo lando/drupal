@@ -2,7 +2,7 @@
   "name": "@lando/drupal",
   "description": "A Lando plugin that provides a tight integration with Drupal.",
   "version": "0.5.3",
-  "author": "John Ouellet @labboy0276",
+  "author": "Mike Pirog @pirog",
   "license": "GPL-3.0",
   "repository": "lando/drupal",
   "bugs": "https://github.com/lando/drupal/issues/new/choose",
@@ -10,11 +10,14 @@
   "keywords": [
     "lando",
     "lando-plugin",
+    "lando-recipe",
     "drupal"
   ],
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=16.0.0"
   },
+  "bundledDependencies": true,
+  "lando": {},
   "main": "index.js",
   "nyc": {
     "include": [
