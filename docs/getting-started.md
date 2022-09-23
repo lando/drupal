@@ -42,6 +42,9 @@ lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 
 # List information about this app
 lando info
+
+# Create a one time login link for admin user
+lando drush user:login -l https://my-first-drupal10-app.lndo.site
 ```
 
 :::
@@ -71,6 +74,10 @@ lando drush site:install --db-url=mysql://drupal9:drupal9@database/drupal9 -y
 
 # List information about this app
 lando info
+
+# Create a one time login link for admin user
+lando drush user:login -l https://my-first-drupal9-app.lndo.site
+
 ```
 
 </CodeGroupItem>
