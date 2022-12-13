@@ -62,7 +62,7 @@ jobs:
         run: |
           lando --clear
           lando version
-          lando config --path plugins | grep drupal | grep /home/runner/work/drupal/drupal || echo "::error:: Not dogfooding this plugin correctly! "
+          lando config --path plugins | grep drupal | grep /home/runner/work/drupal/drupal || (echo "::error:: Not dogfooding this plugin correctly!" && exit 1)
 
       # This block should eventually become use lando/actions-leia@v2
       # @NOTE? Do we want a way for our leia-action to configure apparmor since
