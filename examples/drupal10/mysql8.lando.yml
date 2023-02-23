@@ -1,0 +1,5 @@
+name: lando-drupal10 
+recipe: drupal10
+config:
+  webroot: .
+  database: mysql:8.0.22

@@ -1,4 +1,4 @@
-Drupal 10 Example
+Drupal 10 w/MySQL 8 Example
 ================
 
 This example exists primarily to test the following documentation:
@@ -67,6 +67,13 @@ lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
 # Should be able to install drupal
 cd drupal10
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
+
+# Should be able to use MySQL 8.x
+cd drupal10
+pwd
+cp ../mysql8.lando.yml .lando.yml
+lando rebuild -y
+lando mysql -V | grep 8.0
 ```
 
 Destroy tests
