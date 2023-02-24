@@ -1,4 +1,4 @@
-name: lando-drupal10 
+name: lando-drupal10-mysql8
 recipe: drupal10
 config:
   webroot: .

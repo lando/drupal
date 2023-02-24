@@ -17,6 +17,7 @@ jobs:
           - examples/drupal8
           - examples/drupal9
           - examples/drupal10
+          - examples/drupal10-mysql8
         lando-versions:
           - edge
         os:
