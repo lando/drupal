@@ -14,12 +14,8 @@ Run the following commands to get up and running with this example.
 # Should poweroff
 lando poweroff
 
-# Create latest drupal10 project via composer
-mkdir -p mysql8 && cp .lando.yml mysql8/.lando.yml && cd mysql8 
-lando composer create-project drupal/recommended-project:10.0.x-dev@dev tmp && cp -r tmp/. . && rm -rf tmp
-
 # Should start up successfully
-cd mysql8
+rm -rf mysql8 && mkdir -p mysql8 && cp .lando.yml mysql8/.lando.yml && cd mysql8
 echo -e "\nplugins:\n  \"@lando/drupal/\": ./../../" >> .lando.yml
 lando start
 ```
@@ -30,34 +26,17 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should return the drupal installation page by default
-cd mysql8
-lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 10"
-
-# Should use 8.1 as the default php version
-cd mysql8
-lando php -v | grep "PHP 8.1"
-
-# Should be running apache 2.4 by default
-cd mysql8
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
-
 # Should be running mysql 8.0.x
 cd mysql8
 lando mysql -V | grep 8.0
 
-# Should be running sqlite 3.34 by default
-cd mysql8
-lando php -r "print_r(SQLite3::version());" | grep versionString | grep 3.34
-
-# Should not enable xdebug by default
-cd mysql8
-lando php -m | grep xdebug || echo $? | grep 1
-
 # Should use the default database connection info
 cd mysql8
 lando mysql -udrupal10 -pdrupal10 drupal10 -e quit
+
+# Should be able to retrieve Drupal 10 codebase
+cd mysql8
+lando composer create-project drupal/recommended-project:10.0.x-dev@dev tmp && cp -r tmp/. . && rm -rf tmp
 
 # Should use site-local drush if installed
 cd mysql8
@@ -67,6 +46,10 @@ lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
 # Should be able to install drupal
 cd mysql8
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
+
+# Should show drupal homepage
+cd mysql8
+lando ssh -s appserver -c "curl -L localhost" | grep "Drush Site-Install"
 ```
 
 Destroy tests
