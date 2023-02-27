@@ -34,7 +34,6 @@ module.exports = {
       } else if (_.get(options, 'database') === 'postgres') {
         options.database = 'postgres:12';
       }
-
       // Send it downstream
       super(id, options);
     };
