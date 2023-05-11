@@ -1,3 +1,4 @@
+name: lando-drupal8 # this can be removed when we release the new lando 3.17.x cli
 excludes:
   - core
   - vendor
