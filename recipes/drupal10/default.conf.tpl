@@ -96,7 +96,7 @@ server {
   }
   # Fighting with Styles? This little gem is amazing.
   # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
-  location ~ ^(/[a-z\-]+)?/sites/.*/files/styles/ { # For Drupal >= 7
+  location ~ ^(/[a-z\-]+)?/sites/.*/files/css|js|styles/ { # For Drupal >= 7
       try_files $uri @rewrite;
   }
   # Handle private files through Drupal. Private file's path can come
