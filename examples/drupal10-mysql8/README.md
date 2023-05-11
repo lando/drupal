@@ -20,7 +20,7 @@ lando init --source remote --remote-url https://ftp.drupal.org/files/projects/dr
 
 # Should start up successfully
 cd mysql8
-echo -e "\nplugins:\n  \"@lando/drupal/\": ./../../" >> .lando.yml
+echo -e "\nplugins:\n  \"@lando/drupal\": ./../../../" >> .lando.yml
 lando start
 ```
 

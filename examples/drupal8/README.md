@@ -22,9 +22,7 @@ lando init --source remote --remote-url https://ftp.drupal.org/files/projects/dr
 cp -f .lando.local.yml drupal8/.lando.local.yml
 
 # Should dogfood the plugin
-# cd drupal8
-# echo -e "\nplugins:\n  \"@lando/drupal/\": ./../../" >> .lando.yml
-true
+echo -e "\nplugins:\n  \"@lando/drupal\": ./../../../" >> .lando.yml
 
 # Should start up successfully
 cd drupal8

@@ -1,10 +1,15 @@
+## v0.9.0 - [May 11, 2023](https://github.com/lando/drupal/releases/tag/v0.9.0)
+
+* Added support for Drupal lazy aggregation [#48](https://github.com/lando/drupal/pull/48)
+
 ## v0.8.0 - [February 24, 2022](https://github.com/lando/drupal/releases/tag/v0.8.0)
 
 * Added compatibility for MySQL 8.x [lando/lando#1426](https://github.com/lando/lando/issues/1462)
 
 ## v0.7.0 - [December 12, 2022](https://github.com/lando/drupal/releases/tag/v0.7.0)
-  * Added bundle-dependencies to release process.
-  * Fixed bug in plugin dogfooding test.
+
+* Added bundle-dependencies to release process.
+* Fixed bug in plugin dogfooding test.
 
 ## v0.6.0 - [September 8, 2022](https://github.com/lando/drupal/releases/tag/v0.6.0)
 
