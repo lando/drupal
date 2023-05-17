@@ -38,7 +38,7 @@ lando ssh -s appserver_nginx -c "curl -L localhost" | grep "Drupal 10"
 cd nginx
 lando php -v | grep "PHP 8.1"
 
-# Should be running apache 2.4 by default
+# Should be running nginx 1.17 by default
 cd nginx
 lando ssh -s appserver_nginx -c "nginx -v | grep 1.17"
 lando ssh -s appserver_nginx -c "curl -IL localhost" | grep Server | grep nginx
