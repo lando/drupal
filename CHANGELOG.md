@@ -1,3 +1,7 @@
+## v0.10.0 - [May 17, 2023](https://github.com/lando/drupal/releases/tag/v0.10.0)
+
+* Fixed issue with Drupal lazy aggregation and added test. [#56](https://github.com/lando/drupal/issues/56)
+
 ## v0.9.0 - [May 11, 2023](https://github.com/lando/drupal/releases/tag/v0.9.0)
 
 * Added support for Drupal lazy aggregation [#48](https://github.com/lando/drupal/pull/48)
