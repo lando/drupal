@@ -67,6 +67,11 @@ lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
 # Should be able to install drupal
 cd drupal10
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
+
+# Should be able to enable and access jsonapi
+cd drupal10
+lando drush en jsonapi -y
+lando ssh -c "curl localhost/jsonapi" | grep "action--action"
 ```
 
 Destroy tests
