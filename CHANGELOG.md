@@ -1,3 +1,8 @@
+## v0.11.0 - [July 3, 2023](https://github.com/lando/drupal/releases/tag/v0.11.0)
+  * Removed bundle-dependencies and version-bump-prompt from plugin.
+  * Updated package to use prepare-release-action.
+  * Updated documentation to reflect new release process.
+
 ## v0.10.0 - [May 17, 2023](https://github.com/lando/drupal/releases/tag/v0.10.0)
 
 * Fixed issue with Drupal lazy aggregation and added test. [#56](https://github.com/lando/drupal/issues/56)
