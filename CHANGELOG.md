@@ -2,6 +2,7 @@
   * Removed bundle-dependencies and version-bump-prompt from plugin.
   * Updated package to use prepare-release-action.
   * Updated documentation to reflect new release process.
+  * Added tests for using nginx [#58](https://github.com/lando/drupal/pull/58)
 
 ## v0.10.0 - [May 17, 2023](https://github.com/lando/drupal/releases/tag/v0.10.0)
 
