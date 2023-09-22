@@ -12,3 +12,5 @@ services:
   appserver:
     build:
       - composer require -n drush/drush:10.2.1
+plugins:
+  "@lando/drupal": ./../../../
