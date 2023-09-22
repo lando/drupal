@@ -20,7 +20,7 @@ lando init --source remote --remote-url https://ftp.drupal.org/files/projects/dr
 
 # Should start up successfully
 cd nginx
-echo -e "\nplugins:\n  \"@lando/drupal\": ./../../../" >> .lando.yml
+cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
 lando start
 ```
 
