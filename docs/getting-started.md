@@ -32,6 +32,9 @@ mkdir my-first-drupal9-app \
 # Create latest drupal9 project via composer
 lando composer create-project drupal/recommended-project:9.x tmp && cp -r tmp/. . && rm -rf tmp
 
+# Composer can timeout on install for some machines, if that happens, run the following command and then re-run the previous lando composer command:
+# lando composer config --global process-timeout 2000
+
 # Start it up
 lando start
 
@@ -60,6 +63,9 @@ mkdir my-first-drupal10-app \
     
 # Create latest drupal10 project via composer
 lando composer create-project drupal/recommended-project:10.0.x-dev@dev tmp && cp -r tmp/. . && rm -rf tmp
+
+# Composer can timeout on install for some machines, if that happens, run the following command and then re-run the previous lando composer command:
+# lando composer config --global process-timeout 2000
 
 # Start it up
 lando start
