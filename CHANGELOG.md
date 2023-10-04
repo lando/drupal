@@ -1,3 +1,7 @@
+## v0.12.0 - [October 4, 2023](https://github.com/lando/drupal/releases/tag/v0.12.0)
+* Fixed issue with compiled assets on Drupal 10.1 [#71](https://github.com/lando/drupal/issues/71)
+
+
 ## v0.11.0 - [July 3, 2023](https://github.com/lando/drupal/releases/tag/v0.11.0)
   * Removed bundle-dependencies and version-bump-prompt from plugin.
   * Updated package to use prepare-release-action.
