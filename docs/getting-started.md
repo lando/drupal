@@ -17,38 +17,7 @@ Before you get started with this recipe we assume that you have:
 Try out the relevant commands below to spin up a new Landoified vanilla Drupal site.
 
 :::: code-group DRUPAL
-::: code-group-item DRUPAL 10
-```bash:no-line-numbers
-# Initialize a drupal10 recipe
-mkdir my-first-drupal10-app \
-  && cd my-first-drupal10-app \
-  && lando init \
-    --source cwd \
-    --recipe drupal10 \
-    --webroot web \
-    --name my-first-drupal10-app
-    
-# Create latest drupal10 project via composer
-lando composer create-project drupal/recommended-project:10.0.x-dev@dev tmp && cp -r tmp/. . && rm -rf tmp
-
-# (Composer can timeout on install for some machines, if that happens, run the following command instead of the command above to increase the composer timeout limit)
-# lando composer config --global process-timeout 2000 && lando composer create-project drupal/recommended-project:10.0.x-dev@dev tmp && cp -r tmp/. . && rm -rf tmp
-
-# Start it up
-lando start
-
-# Install a site local drush
-lando composer require drush/drush
-
-# Install drupal
-lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
-
-# List information about this app
-lando info
-```
-
-:::
-<CodeGroupItem title="DRUPAL 9" active>
+::: code-group-item DRUPAL 9
 
 ```bash:no-line-numbers
 # Initialize a drupal9 recipe
@@ -62,10 +31,10 @@ mkdir my-first-drupal9-app \
     
 # Create latest drupal9 project via composer
 lando composer create-project drupal/recommended-project:9.x tmp && cp -r tmp/. . && rm -rf tmp
-  
-# (Composer can timeout on install for some machines, if that happens, run the following command instead of the command above to increase the composer timeout limit)
-# lando composer config --global process-timeout 2000 && composer create-project drupal/recommended-project:9.x tmp && cp -r tmp/. . && rm -rf tmp
-  
+
+# Composer can timeout on install for some machines, if that happens, run the following command and then re-run the previous lando composer command:
+# lando composer config --global process-timeout 2000
+
 # Start it up
 lando start
 
@@ -74,6 +43,38 @@ lando composer require drush/drush
 
 # Install drupal
 lando drush site:install --db-url=mysql://drupal9:drupal9@database/drupal9 -y
+
+# List information about this app
+lando info
+```
+
+:::
+<CodeGroupItem title="DRUPAL 10" active>
+
+```bash:no-line-numbers
+# Initialize a drupal10 recipe
+mkdir my-first-drupal10-app \
+  && cd my-first-drupal10-app \
+  && lando init \
+    --source cwd \
+    --recipe drupal10 \
+    --webroot web \
+    --name my-first-drupal10-app
+    
+# Create latest drupal10 project via composer
+lando composer create-project drupal/recommended-project:10.0.x-dev@dev tmp && cp -r tmp/. . && rm -rf tmp
+
+# Composer can timeout on install for some machines, if that happens, run the following command and then re-run the previous lando composer command:
+# lando composer config --global process-timeout 2000
+
+# Start it up
+lando start
+
+# Install a site local drush
+lando composer require drush/drush
+
+# Install drupal
+lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 
 # List information about this app
 lando info
