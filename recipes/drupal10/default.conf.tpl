@@ -55,7 +55,8 @@ server {
   }
 
   location @rewrite {
-      rewrite ^/(.*)$ /index.php?q=$1;
+      #rewrite ^/(.*)$ /index.php?q=$1; # For Drupal <= 6
+      rewrite ^ /index.php; # For Drupal >= 7
   }
 
   # Don't allow direct access to PHP files in the vendor directory.
@@ -96,7 +97,7 @@ server {
   }
   # Fighting with Styles? This little gem is amazing.
   # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
-  location ~ ^(/[a-z\-]+)?/sites/.*/files/styles/ { # For Drupal >= 7
+  location ~ ^(/[a-z\-]+)?/sites/.*/files/(css|js|styles)/ { # For Drupal >= 7
       try_files $uri @rewrite;
   }
   # Handle private files through Drupal. Private file's path can come

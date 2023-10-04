@@ -16,11 +16,11 @@ lando poweroff
 
 # Should initialize the latest Drupal 9 codebase
 rm -rf drupal9 && mkdir -p drupal9 && cd drupal9
-lando init --source remote --remote-url https://www.drupal.org/download-latest/tar.gz --remote-options="--strip-components 1" --recipe drupal9 --webroot . --name lando-drupal9
+lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-9.5.x-dev.tar.gz --remote-options="--strip-components 1" --recipe drupal9 --webroot . --name lando-drupal9
 
 # Should start up successfully
 cd drupal9
-echo -e "\nplugins:\n  \"@lando/drupal/\": ./../../" >> .lando.yml
+cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
 lando start
 ```
 
