@@ -20,7 +20,7 @@ jobs:
           - examples/drupal10-mysql8
           - examples/drupal10-nginx
         lando-version:
-          - 3-dev
+          - 3-dev-slim
         os:
           - ubuntu-22.04
         node-version:
@@ -32,9 +32,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: yarn
-      - name: Install Yarn dependencies
-        run: yarn install --prefer-offline --frozen-lockfile
+          cache: npm
+      - name: Install NPM dependencies
+        run: npm clean-install --prefer-offline --frozen-lockfile
       - name: Setup lando ${{ matrix.lando-version }}
         uses: lando/setup-lando@v2
         with:
