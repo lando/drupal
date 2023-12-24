@@ -25,35 +25,35 @@ jobs:
           - ubuntu-22.04
         node-version:
           - '18'
-        steps:
-          - name: Checkout code
-            uses: actions/checkout@v3
-          - name: Install node ${{ matrix.node-version }}
-            uses: actions/setup-node@v3
-            with:
-              node-version: ${{ matrix.node-version }}
-              registry-url: https://registry.npmjs.org
-              cache: npm
-          - name: Install NPM dependencies
-            run: npm clean-install --prefer-offline --frozen-lockfile
-          - name: Bundle Deps
-            uses: lando/prepare-release-action@v2
-            with:
-              lando-plugin: true
-              version: dev
-              sync: false
-          - name: Setup lando ${{ matrix.lando-version }}
-            uses: lando/setup-lando@v2
-            with:
-              lando-version: ${{ matrix.lando-version }}
-              config: |
-                setup.skipCommonPlugins=true
-                setup.plugins.@lando/drupal=/home/runner/work/drupal/drupal
-              telemetry: false
-          - name: Run Leia Tests
-            uses: lando/run-leia-action@v2
-            with:
-              leia-test: "./${{ matrix.leia-test }}/README.md"
-                cleanup-header: "Destroy tests"
-                shell: bash
-                stdin: true
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Install node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: https://registry.npmjs.org
+          cache: npm
+      - name: Install NPM dependencies
+        run: npm clean-install --prefer-offline --frozen-lockfile
+      - name: Bundle Deps
+        uses: lando/prepare-release-action@v2
+        with:
+          lando-plugin: true
+          version: dev
+          sync: false
+      - name: Setup lando ${{ matrix.lando-version }}
+        uses: lando/setup-lando@v2
+        with:
+          lando-version: ${{ matrix.lando-version }}
+          config: |
+            setup.skipCommonPlugins=true
+            setup.plugins.@lando/drupal=/home/runner/work/drupal/drupal
+          telemetry: false
+      - name: Run Leia Tests
+        uses: lando/run-leia-action@v2
+        with:
+          leia-test: "./${{ matrix.leia-test }}/README.md"
+          cleanup-header: "Destroy tests"
+          shell: bash
+          stdin: true
