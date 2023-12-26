@@ -250,7 +250,6 @@ module.exports = {
         if (_.startsWith(options.via, 'nginx')) options.proxyService = 'appserver_nginx';
         else if (_.startsWith(options.via, 'apache')) options.proxyService = 'appserver';
       }
-      console.log(`${options.app}.${options._app._config.domain}`);
       options.proxy = _.set(options.proxy, options.proxyService, [`${options.app}.${options._app._config.domain}`]);
 
       // Send downstream
