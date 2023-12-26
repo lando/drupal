@@ -71,7 +71,7 @@ lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 # Should be able to enable and access jsonapi
 cd nginx
 lando drush en jsonapi -y
-lando ssh -c "curl localhost/jsonapi" | grep "action--action"
+lando ssh -c "curl appserver_nginx/jsonapi" | grep "action--action"
 ```
 
 Destroy tests
