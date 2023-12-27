@@ -32,16 +32,16 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd nginx
-lando ssh -s appserver_nginx -c "curl -L localhost" | grep "Drupal 10"
+lando ssh -s appserver -c "curl -L appserver_nginx" | grep "Drupal 10"
 
 # Should use 8.1 as the default php version
 cd nginx
 lando php -v | grep "PHP 8.1"
 
-# Should be running nginx 1.17 by default
+# Should be running nginx 1.25 by default
 cd nginx
-lando ssh -s appserver_nginx -c "nginx -v 2>&1 | grep 1.17"
-lando ssh -s appserver_nginx -c "curl -IL localhost" | grep Server | grep nginx
+lando ssh -s appserver_nginx -c "nginx -v 2>&1 | grep 1.25"
+lando ssh -s appserver -c "curl -IL appserver_nginx" | grep Server | grep nginx
 
 # Should be running mysql 5.7 by default
 cd nginx
@@ -68,10 +68,10 @@ lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
 cd nginx
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 
-# Should be able to enable and access jsonapi
+# Should be able to access jsonapi
 cd nginx
 lando drush en jsonapi -y
-lando ssh -s appserver_nginx -c "curl localhost/jsonapi" | grep "action--action"
+lando ssh -c "curl lando-drupal10-nginx.lndo.site/jsonapi" | grep "action--action"
 ```
 
 Destroy tests
