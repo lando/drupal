@@ -14,7 +14,7 @@ module.exports = {
   name: 'drupal10',
   parent: '_drupaly',
   config: {
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config', 'drupal10'),
     defaultFiles: {},
     php: '8.1',
     drush: '^11',

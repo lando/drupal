@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const path = require('path');
 const utils = require('./../lib/utils');
 
 // Get install DC command
@@ -14,7 +15,7 @@ module.exports = {
   name: 'drupal8',
   parent: '_drupaly',
   config: {
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config', 'drupal8'),
     defaultFiles: {},
     php: '7.3',
     drupal: true,

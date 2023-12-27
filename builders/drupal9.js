@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const path = require('path');
 
 // Get install DC command
 // const utils = require('./../lib/utils');
@@ -14,7 +15,7 @@ module.exports = {
   name: 'drupal9',
   parent: '_drupaly',
   config: {
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config', 'drupal9'),
     defaultFiles: {},
     php: '8.0',
     drush: '^11',

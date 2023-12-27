@@ -68,9 +68,8 @@ lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
 cd nginx
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 
-# Should be able to enable and access jsonapi
+# Should be able to access jsonapi
 cd nginx
-lando drush en jsonapi -y
 lando ssh -c "curl appserver_nginx/jsonapi" | grep "action--action"
 ```
 

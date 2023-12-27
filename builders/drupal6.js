@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const path = require('path');
 
 /*
  * Build Drupal 6
@@ -10,7 +11,7 @@ module.exports = {
   name: 'drupal6',
   parent: '_drupaly',
   config: {
-    confSrc: __dirname,
+    confSrc: path.resolve(__dirname, '..', 'config', 'drupal6'),
     defaultFiles: {},
     php: '5.6',
     // @NOTE: below seems to be the last known drush version that let you do
