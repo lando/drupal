@@ -2,6 +2,7 @@
 
 // Modules
 const _ = require('lodash');
+const path = require('path');
 
 // Get install DC command
 // const utils = require('./../lib/utils');
