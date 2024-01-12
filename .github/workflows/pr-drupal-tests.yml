@@ -20,7 +20,7 @@ jobs:
           - examples/drupal10-mysql8
           - examples/drupal10-nginx
         lando-version:
-          - 3-dev-slim
+          - 'https://files.lando.dev/cli/lando-linux-x64-latest-slim'
         os:
           - ubuntu-22.04
         node-version:
@@ -35,7 +35,7 @@ jobs:
           registry-url: https://registry.npmjs.org
           cache: npm
       - name: Install NPM dependencies
-        run: npm clean-install --prefer-offline --frozen-lockfile
+        run: npm clean-install --production --prefer-offline --frozen-lockfile
       - name: Bundle Deps
         uses: lando/prepare-release-action@v2
         with:
