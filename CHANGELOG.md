@@ -1,3 +1,5 @@
+## v1.0.1 - [January 12, 2024](https://github.com/lando/drupal/releases/tag/v1.0.1)
+
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/drupal/releases/tag/v1.0.0)
     * Dialed fully for `lando update`
 
