@@ -50,6 +50,9 @@ jobs:
             setup.skipCommonPlugins=true
             setup.plugins.@lando/drupal=/home/runner/work/drupal/drupal
           telemetry: false
+      - name: See Installed Node Modules
+        run: |
+          ls -lsa /home/runner/.lando/plugins/@lando/drupal/node_modules
       - name: Run Leia Tests
         uses: lando/run-leia-action@v2
         with:
