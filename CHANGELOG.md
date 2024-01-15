@@ -1,7 +1,13 @@
+## v1.0.1 - [January 15, 2024](https://github.com/lando/drupal/releases/tag/v1.0.1)
+  
+* Fixed issue with missing `semver` dependency.
+
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/drupal/releases/tag/v1.0.0)
-    * Dialed fully for `lando update`
+  
+* Dialed fully for `lando update`
 
 ## v0.12.0 - [October 4, 2023](https://github.com/lando/drupal/releases/tag/v0.12.0)
+
 * Fixed issue with compiled assets on Drupal 10.1 [#71](https://github.com/lando/drupal/issues/71)
 
 
