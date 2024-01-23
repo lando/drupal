@@ -22,7 +22,7 @@ Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should be able to connect to the relevant databases
-lando mysql drupal -e quit
+lando mysql drupal10 -e quit
 
 # Should be able to import into database by default
 lando db-import mysql-test.sql

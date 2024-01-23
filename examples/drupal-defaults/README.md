@@ -24,8 +24,8 @@ Run the following commands to validate things are rolling as they should.
 # Should serve from app root by default
 lando ssh -s appserver -c "curl -L localhost" | grep "DEFAULTS"
 
-# Should use 7.4 as the default php version
-lando php -v | grep "PHP 7.4"
+# Should use 8.1 as the default php version
+lando php -v | grep "PHP 8.1"
 
 # Should be running apache 2.4 by default
 lando ssh -s appserver -c "apachectl -V | grep 2.4"
@@ -38,7 +38,7 @@ lando mysql -V | grep 5.7
 lando php -m | grep xdebug || echo $? | grep 1
 
 # Should use the default database connection info
-lando mysql drupal -e quit
+lando mysql drupal10 -e quit
 
 # Should use composer 2 by default
 lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2."
