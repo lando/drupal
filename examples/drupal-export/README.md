@@ -26,11 +26,11 @@ lando mysql drupal10 -e quit
 
 # Should be able to import into database by default
 lando db-import mysql-test.sql
-lando mysql drupal -e "show tables;" | grep users
+lando mysql drupal10 -e "show tables;" | grep users
 
 # Should be able to import into user specified database
 lando db-import -h database mysql-test.sql
-lando mysql drupal -e "show tables;" | grep users
+lando mysql drupal10 -e "show tables;" | grep users
 
 # Should be able to export the contents of the dbs
 lando db-export

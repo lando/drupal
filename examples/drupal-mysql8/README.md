@@ -16,7 +16,7 @@ lando poweroff
 
 # Initialize an empty drupal recipe
 rm -rf mysql8 && mkdir -p mysql8 && cd mysql8
-lando init --source cwd --recipe drupal --webroot app/public --name lando-drupal-mysql8 --option php='8.1' --option database=mysql:8.0.22
+lando init --source cwd --recipe drupal10 --webroot app/public --name lando-drupal-mysql8 --option php='8.1' --option database=mysql:8.0.22
 cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
 
 # Should start up successfully
@@ -30,7 +30,7 @@ Verification commands
 Run the following commands to validate things are rolling as they should.
 
 ```bash
-# Should use 7.4 as the default php version
+# Should use 8.1 as the default php version
 cd mysql8
 lando php -v | grep "PHP 8.1"
 

@@ -22,22 +22,22 @@ Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should be able to connect to the relevant databases
-lando mysql database -e quit
+lando mysql drupal10 -e quit
 
 # Should be able to import into database by default
 lando db-import mysql-test.sql
-lando mysql drupal -e "show tables;" | grep users
+lando mysql drupal10 -e "show tables;" | grep users
 
 # Should be able to import into user specified database
 lando db-import -h database subdir/test.sql
-lando mysql drupal -e "show tables;" | grep users
+lando mysql drupal10 -e "show tables;" | grep users
 
 # Should be able to use db-import events
 lando ssh -s database -c "cat /tmp/iran.txt"
 
 # Should persist data after a rebuild
 lando rebuild -y
-lando mysql drupal -e "show tables;" | grep users
+lando mysql drupal10 -e "show tables;" | grep users
 
 # Should be able to import tables with foreign key constraints
 lando db-import big-bad-dump.sql
