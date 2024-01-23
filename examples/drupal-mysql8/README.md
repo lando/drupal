@@ -49,7 +49,7 @@ lando php -m | grep xdebug || echo $? | grep 1
 
 # Should use the default database connection info
 cd mysql8
-lando mysql -udrupal -pdrupal drupal -e quit
+lando mysql -udrupal10 -pdrupal10 drupal10 -e quit
 
 # Should have artisan available
 cd mysql8
