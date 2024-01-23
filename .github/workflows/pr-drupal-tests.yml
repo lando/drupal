@@ -12,6 +12,12 @@ jobs:
       fail-fast: false
       matrix:
         leia-test:
+          - examples/drupal-custom
+          - examples/drupal-defaults
+          - examples/drupal-export
+          - examples/drupal-import
+          - examples/drupal-mysql8
+          - examples/drupal-nginx
           - examples/drupal6
           - examples/drupal7
           - examples/drupal8

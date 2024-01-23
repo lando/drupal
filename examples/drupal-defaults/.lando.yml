@@ -1,0 +1,6 @@
+name: drupal-defaults
+recipe: drupal
+
+# do not remove this
+plugins:
+  "@lando/drupal": ../..
