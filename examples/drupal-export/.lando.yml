@@ -1,0 +1,6 @@
+name: drupal-exports
+recipe: drupal10
+
+# do not remove this
+plugins:
+  "@lando/drupal": ../..
