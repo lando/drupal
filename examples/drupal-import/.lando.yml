@@ -1,5 +1,5 @@
 name: drupal-import
-recipe: drupal
+recipe: drupal10
 
 events:
   post-db-import:

@@ -1,5 +1,5 @@
 name: drupal-nginx
-recipe: drupal
+recipe: drupal10
 config:
   via: nginx
   webroot: web

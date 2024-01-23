@@ -1,5 +1,5 @@
 name: drupal-exports
-recipe: drupal
+recipe: drupal10
 
 # do not remove this
 plugins:
