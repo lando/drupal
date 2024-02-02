@@ -15,6 +15,8 @@ mailchimp:
   button: Sign me up!
 ---
 
+# Drupal 7 Landoize an Extant App
+
 If you and your team have an existing Drupal 7 application that you would like to use Lando for local development you just need to add a `.lando.yml` configuration file
 to the project and commit it to git.
 
