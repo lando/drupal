@@ -138,8 +138,8 @@ jobs:
       fail-fast: false
       matrix:
         leia-test:
-          - examples/2.1
-          - examples/2.2
+          - examples/drupal10
+          - examples/drupal11
 
 ```
 
