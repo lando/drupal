@@ -42,7 +42,7 @@ config:
 
 You can set `php` to any version that is available in our [php service](https://docs.lando.dev/php/).
 
-However, you should consult the [Drupal requirements](https://www.drupal.org/docs/system-requirements) to make sure that the version of `php` you choose is actually supported by the version of `drupal` you are running.
+However, you should consult the [Drupal requirements](https://www.drupal.org/docs/getting-started/system-requirements) to make sure that the version of `php` you choose is actually supported by the version of `drupal` you are running.
 
 Here is the [recipe config](https://docs.lando.dev/core/v3/recipes.html#config) to set the Drupal 9 recipe to use `php` version `7.4`
 
@@ -144,7 +144,7 @@ You can get also get the above information, and more, by using the [`lando info`
 
 ## Using custom config files
 
-You may need to override our [default Drupal config](https://github.com/lando/drupal/tree/main/recipes) with your own.
+You may need to override our [default Drupal config](https://github.com/lando/drupal/tree/main/builders) with your own.
 
 If you do this you must use files that exist inside your application and express them relative to your project root as below.
 
