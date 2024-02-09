@@ -5,9 +5,9 @@ description: Learn how to configure the Lando Drupal recipe.
 
 # Configuration
 
-While Lando [recipes](https://docs.lando.dev/config/recipes.html) set sane defaults so they work out of the box they are also [configurable](https://docs.lando.dev/config/recipes.html#config).
+While Lando [recipes](https://docs.lando.dev/core/v3/recipes.html) set sane defaults so they work out of the box they are also [configurable](https://docs.lando.dev/core/v3/recipes.html#config).
 
-Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/config). If you are unsure about where this goes or what this means we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/config/recipes.html) to get a good handle on how the magicks work.
+Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/core/v3). If you are unsure about where this goes or what this means we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/core/v3/recipes.html) to get a good handle on how the magicks work.
 
 ```yaml
 recipe: drupal9
@@ -26,7 +26,7 @@ config:
     vhosts: SEE BELOW
 ```
 
-Note that if the above config options are not enough all Lando recipes can be further [extended and overriden](https://docs.lando.dev/config/recipes.html#extending-and-overriding-recipes).
+Note that if the above config options are not enough all Lando recipes can be further [extended and overriden](https://docs.lando.dev/core/v3/recipes.html#extending-and-overriding-recipes).
 
 ## Choosing a Drupal version
 
@@ -42,9 +42,9 @@ config:
 
 You can set `php` to any version that is available in our [php service](https://docs.lando.dev/php/).
 
-However, you should consult the [Drupal requirements](https://www.drupal.org/docs/system-requirements) to make sure that the version of `php` you choose is actually supported by the version of `drupal` you are running.
+However, you should consult the [Drupal requirements](https://www.drupal.org/docs/getting-started/system-requirements) to make sure that the version of `php` you choose is actually supported by the version of `drupal` you are running.
 
-Here is the [recipe config](https://docs.lando.dev/config/recipes.html#config) to set the Drupal 9 recipe to use `php` version `7.4`
+Here is the [recipe config](https://docs.lando.dev/core/v3/recipes.html#config) to set the Drupal 9 recipe to use `php` version `7.4`
 
 ```yaml
 recipe: drupal9
@@ -88,7 +88,7 @@ By default this recipe will use the default version of our [mysql](https://docs.
 
 If you are unsure about how to configure the `database` we *highly recommend* you check out the [`mysql`](https://docs.lando.dev/mysql), [`mariadb`](https://docs.lando.dev/mariadb) and [`postgres`](https://docs.lando.dev/postgres) services before you change the default.
 
-Also note that like the configuration of the `php` version you should consult the [Drupal requirements](https://www.drupal.org/docs/system-requirements) to make sure the `database` and `version` you select is actually supported by the version of Drupal you are using.
+Also note that like the configuration of the `php` version you should consult the [Drupal requirements](https://www.drupal.org/docs/getting-started/system-requirements) to make sure the `database` and `version` you select is actually supported by the version of Drupal you are using.
 
 #### Using MySQL (default)
 
@@ -144,7 +144,7 @@ You can get also get the above information, and more, by using the [`lando info`
 
 ## Using custom config files
 
-You may need to override our [default Drupal config](https://github.com/lando/drupal/tree/main/recipes) with your own.
+You may need to override our [default Drupal config](https://github.com/lando/drupal/tree/main/builders) with your own.
 
 If you do this you must use files that exist inside your application and express them relative to your project root as below.
 
