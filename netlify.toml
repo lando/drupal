@@ -39,13 +39,13 @@
 # We need this so preview environments and the base site look ok on their own
 [[redirects]]
   from = "/"
-  to = "/drupal"
+  to = "/plugins/drupal"
   status = 200
 [[redirects]]
-  from = "/drupal/*"
+  from = "/plugins/drupal/*"
   to = "/:splat"
   status = 200
 [[redirects]]
-  from = "/drupal/legacy-versions.html"
-  to = "/drupal/legacy/drupal-8.html"
+  from = "/plugins/drupal/legacy-versions.html"
+  to = "/plugins/drupal/legacy/plugins/drupal-8.html"
   status = 200
