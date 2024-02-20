@@ -1,3 +1,7 @@
+## v1.1.0 - [February 20, 2024](https://github.com/lando/drupal/releases/tag/v1.1.0)
+
+* Included ability to specify `database: mssql` in the `config` section to maintain backwards compatibility. [@lando/mssql#31](https://github.com/lando/mssql/issues/31)
+
 ## v1.0.1 - [January 15, 2024](https://github.com/lando/drupal/releases/tag/v1.0.1)
   
 * Fixed issue with missing `semver` dependency.
