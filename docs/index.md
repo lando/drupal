@@ -11,7 +11,7 @@ Drupal is a free and open source content-management framework written in PHP and
 #### Features of this plugin:
 
 * Supports `drupal6`, `drupal7`, `drupal8`, `drupal9` and `drupal10`.
-* Configurable `php` version from `5.3` all the way to `8.1`
+* Configurable `php` version from `5.3` all the way to `8.3`
 * Configurable `webroot`
 * Configurable web server (`apache` or `nginx`)
 * Configurable database backend (`mariadb`, `mysql`, `postgres`)

@@ -1,3 +1,14 @@
+## v1.2.0 - [February 23, 2024](https://github.com/lando/drupal/releases/tag/v1.2.0)
+
+### Fixes
+
+* Fixed `CRITICAL` issue with default config files not loading correctly
+
+### Internal
+
+* Updated to `@lando/php@1.2.0`
+* Config tests.
+
 ## v1.1.0 - [February 20, 2024](https://github.com/lando/drupal/releases/tag/v1.1.0)
 
 * Included ability to specify `database: mssql` in the `config` section to maintain backwards compatibility. [@lando/mssql#31](https://github.com/lando/mssql/issues/31)

@@ -54,6 +54,10 @@ lando mysql -udrupal10 -pdrupal10 drupal10 -e quit
 # Should have artisan available
 cd mysql8
 lando artisan env
+
+# Should use the defauly mysql8 config file
+lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDODRUPALMYSQL8CNF"
+lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 127
 ```
 
 Destroy tests

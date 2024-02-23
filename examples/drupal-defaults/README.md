@@ -42,6 +42,12 @@ lando mysql drupal10 -e quit
 
 # Should use composer 2 by default
 lando ssh -s appserver -c "/bin/sh -c 'NO_COLOR=1 composer -V'" | grep "Composer version 2."
+
+# Should use the correct default config files
+lando ssh -s appserver -c "cat /usr/local/etc/php/conf.d/zzz-lando-my-custom.ini" | grep "; LANDODRUPALPHPINI"
+lando ssh -s appserver -c "curl -L http://localhost/info.php" | grep max_execution_time | grep 91
+lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDODRUPALMYSQLCNF"
+lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 121
 ```
 
 Destroy tests
