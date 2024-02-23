@@ -56,6 +56,7 @@ cd mysql8
 lando artisan env
 
 # Should use the defauly mysql8 config file
+cd mysql8
 lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDODRUPALMYSQL8CNF"
 lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 127
 ```
