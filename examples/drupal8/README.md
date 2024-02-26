@@ -19,7 +19,8 @@ rm -rf drupal8 && mkdir -p drupal8 && cd drupal8
 lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-8.9.20.tar.gz --remote-options="--strip-components 1" --recipe drupal8 --webroot . --name lando-drupal8 --option database=mysql:8.0 --option composer_version=2.1.14
 
 # Should copy in the .lando.upstream.yml
-cp -f .lando.upstream.yml drupal8/.lando.upstream.yml
+cd drupal8
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 
 # Should start up successfully
 cd drupal8
