@@ -1,8 +1,4 @@
-## v1.2.0 - [February 23, 2024](https://github.com/lando/drupal/releases/tag/v1.2.0)
-
-### Fixes
-
-* Fixed `CRITICAL` issue with default config files not loading correctly
+## v1.2.0 - [February 26, 2024](https://github.com/lando/drupal/releases/tag/v1.2.0)
 
 ### Internal
 
