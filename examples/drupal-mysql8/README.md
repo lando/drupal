@@ -17,7 +17,7 @@ lando poweroff
 # Initialize an empty drupal recipe
 rm -rf mysql8 && mkdir -p mysql8 && cd mysql8
 lando init --source cwd --recipe drupal10 --webroot app/public --name lando-drupal-mysql8 --option php='8.1' --option database=mysql:8.0.22
-cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 
 # Should start up successfully
 cd mysql8
