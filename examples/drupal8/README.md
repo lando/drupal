@@ -18,8 +18,9 @@ lando poweroff
 rm -rf drupal8 && mkdir -p drupal8 && cd drupal8
 lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-8.9.20.tar.gz --remote-options="--strip-components 1" --recipe drupal8 --webroot . --name lando-drupal8 --option database=mysql:8.0 --option composer_version=2.1.14
 
-# Should copy in the .lando.local.yml
-cp -f .lando.local.yml drupal8/.lando.local.yml
+# Should copy in the .lando.upstream.yml
+cd drupal8
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 
 # Should start up successfully
 cd drupal8
@@ -61,9 +62,9 @@ lando php -m | grep xdebug || echo $? | grep 1
 cd drupal8
 lando mysql -udrupal8 -pdrupal8 drupal8 -e quit
 
-# Should use drush 10.2.1
+# Should use drush 8.4.8
 cd drupal8
-lando drush version | grep 10.2.1
+lando drush version | grep 8.4.8
 
 # Should be able to install drupal
 cd drupal8

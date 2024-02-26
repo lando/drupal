@@ -20,7 +20,7 @@ lando init --source remote --remote-url https://ftp.drupal.org/files/projects/dr
 
 # Should start up successfully
 cd drupal9
-cp -f ../../.lando.local.yml .lando.local.yml && cat .lando.local.yml
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando start
 ```
 

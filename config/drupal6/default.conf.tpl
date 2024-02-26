@@ -1,3 +1,5 @@
+# LANDODRUPALNGINXCONF
+
 server {
   listen 80 default_server;
   listen 443 ssl;
@@ -57,8 +59,8 @@ server {
   }
 
   location / {
-      try_files $uri @rewrite; # For Drupal <= 6
-      # try_files $uri /index.php?$query_string; # For Drupal >= 7
+      # try_files $uri @rewrite; # For Drupal <= 6
+      try_files $uri /index.php?$query_string; # For Drupal >= 7
   }
 
   location @rewrite {
@@ -103,16 +105,16 @@ server {
   }
 
   # Fighting with Styles? This little gem is amazing.
-  location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
-  # location ~ ^/sites/.*/files/styles/ { # For Drupal >= 7
+  # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
+  location ~ ^(/[a-z\-]+)?/sites/.*/files/styles/ { # For Drupal >= 7
       try_files $uri @rewrite;
   }
 
   # Handle private files through Drupal. Private file's path can come
   # with a language prefix.
-  #location ~ ^(/[a-z\-]+)?/system/files/ { # For Drupal >= 7
-  #    try_files $uri /index.php?$query_string;
-  #}
+  location ~ ^(/[a-z\-]+)?/system/files/ { # For Drupal >= 7
+      try_files $uri /index.php?$query_string;
+  }
 
   location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
       expires max;
