@@ -62,9 +62,9 @@ lando php -m | grep xdebug || echo $? | grep 1
 cd drupal8
 lando mysql -udrupal8 -pdrupal8 drupal8 -e quit
 
-# Should use drush 10.2.1
+# Should use drush 8.4.8
 cd drupal8
-lando drush version | grep 10.2.1
+lando drush version | grep 8.4.8
 
 # Should be able to install drupal
 cd drupal8
