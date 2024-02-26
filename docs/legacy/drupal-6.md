@@ -7,22 +7,22 @@ description: Lando docs for Drupal 8 (legacy version).
 ## Quickstart
 
 ```bash:no-line-numbers
-# Initialize a drupal8 recipe using the latest Drupal 8 version
-mkdir my-first-drupal8-app \
-  && cd my-first-drupal8-app \
+# Initialize a drupal6 recipe using the latest Drupal 6 version
+mkdir my-first-drupal6-app \
+  && cd my-first-drupal6-app \
   && lando init \
   --source remote \
-  --remote-url https://ftp.drupal.org/files/projects/drupal-8.9.20.tar.gz \
+  --remote-url https://ftp.drupal.org/files/projects/drupal-6.38.tar.gz \
   --remote-options="--strip-components 1" \
-  --recipe drupal8 \
+  --recipe drupal6 \
   --webroot . \
-  --name my-first-drupal8-app
+  --name my-first-drupal6-app
 
 # Start it up
 lando start
 
 # Install drupal
-lando drush si --db-url=mysql://drupal8:drupal8@database/drupal8 -y
+lando drush si --db-url=mysql://drupal6:drupal6@database/drupal6 -y
 
 # List information about this app.
 lando info
