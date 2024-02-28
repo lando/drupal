@@ -48,8 +48,8 @@
 [[redirects]]
   from = "/legacy-versions.html"
   to = "/plugins/drupal/legacy/drupal-8.html"
-  status = 301
+  status = 302
 [[redirects]]
   from = "/drupal-multisite.html"
   to = "/plugins/drupal/guides/drupal-multisite.html"
-  status = 301
+  status = 302
