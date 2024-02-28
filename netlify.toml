@@ -46,6 +46,10 @@
   to = "/:splat"
   status = 200
 [[redirects]]
-  from = "/plugins/drupal/legacy-versions.html"
-  to = "/plugins/drupal/legacy/plugins/drupal-8.html"
-  status = 200
+  from = "/legacy-versions.html"
+  to = "/legacy/plugins/drupal-8.html"
+  status = 301
+[[redirects]]
+  from = "/drupal-multisite.html"
+  to = "/guides/drupal-multisite.html"
+  status = 301
