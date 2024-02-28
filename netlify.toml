@@ -47,9 +47,9 @@
   status = 200
 [[redirects]]
   from = "/legacy-versions.html"
-  to = "/legacy/plugins/drupal-8.html"
+  to = "/plugins/drupal/legacy/drupal-8.html"
   status = 301
 [[redirects]]
   from = "/drupal-multisite.html"
-  to = "/guides/drupal-multisite.html"
+  to = "/plugins/drupal/guides/drupal-multisite.html"
   status = 301
