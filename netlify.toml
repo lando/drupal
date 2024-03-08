@@ -45,7 +45,5 @@
   from = "/plugins/drupal/*"
   to = "/:splat"
   status = 200
-[[redirects]]
-  from = "/plugins/drupal/legacy-versions.html"
-  to = "/plugins/drupal/legacy/plugins/drupal-8.html"
-  status = 200
+
+
