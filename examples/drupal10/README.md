@@ -59,6 +59,10 @@ lando php -m | grep xdebug || echo $? | grep 1
 cd drupal10
 lando mysql -udrupal10 -pdrupal10 drupal10 -e quit
 
+# Should use a composer version above 2.3.6
+cd drupal10
+[[ $(lando composer --version | cut -d " " -f 3 | awk -v min=2.3.6 -F. '($1 > min) || ($1 == min && $2 > 0) || ($1 == min && $2 == 0 && $3 > 6)') ]]
+
 # Should use site-local drush if installed
 cd drupal10
 lando composer require drush/drush
