@@ -13,7 +13,7 @@ Here are the configuration options, set to the default values, for this recipe's
 recipe: drupal9
 config:
   php: '8.0'
-  composer_version: '2.2.12'
+  composer_version: '2-latest'
   via: apache:2.4
   webroot: .
   database: mysql:5.7
@@ -61,6 +61,8 @@ recipe: drupal9
 config:
   composer_version: '1.10.1'
 ```
+
+By default, Drupal 9 and 10 use the latest version of Composer 2.x.
 
 ## Choosing a webserver
 
