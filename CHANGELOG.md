@@ -1,4 +1,9 @@
+## v1.4.0 - [April 15, 2024](https://github.com/lando/drupal/releases/tag/v1.4.0)
+  
+  * Updated version of Composer used with Drupal 9 and 10 to `2-latest`. [#31](https://github.com/lando/drupal/issues/31)
+
 ## v1.3.0 - [March 8, 2024](https://github.com/lando/drupal/releases/tag/v1.3.0)
+
   * Updated to latest database services.
 
 ## v1.2.0 - [February 26, 2024](https://github.com/lando/drupal/releases/tag/v1.2.0)

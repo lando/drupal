@@ -19,6 +19,7 @@ module.exports = {
     defaultFiles: {},
     php: '8.0',
     drush: '^11',
+    composer_version: '2-latest',
   },
   builder: (parent, config) => class LandoDrupal9 extends parent {
     constructor(id, options = {}) {
