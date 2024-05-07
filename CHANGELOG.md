@@ -1,3 +1,7 @@
+## Unreleased
+
+* Added support for Drupal 11
+
 ## v1.4.0 - [April 16, 2024](https://github.com/lando/drupal/releases/tag/v1.4.0)
   
   * Updated version of Composer used with Drupal 9 and 10 to `2-latest`. [#31](https://github.com/lando/drupal/issues/31)
