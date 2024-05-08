@@ -1,7 +1,7 @@
-## UNRELEASED
+## v1.5.0 - [May 8, 2024](https://github.com/lando/drupal/releases/tag/v1.5.0)
 
 * Updated mariadb plugin and added tooling support for the mariadb executable. [#51](https://github.com/lando/mariadb/issues/51
-* Added support for Drupal 11
+* Added support for Drupal 11. [#109](https://github.com/lando/drupal/pull/109)
 
 ## v1.4.0 - [April 16, 2024](https://github.com/lando/drupal/releases/tag/v1.4.0)
 
