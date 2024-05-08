@@ -3,7 +3,7 @@
 This is the _official_ [Lando](https://lando.dev) plugin for [Drupal](https://www.drupal.org/). When installed it...
 
 * Allows users to run `drupal` cms
-* Allows users to configure `php` version from `5.3` all the way to `8.1`
+* Allows users to configure `php` version from `5.3` all the way to `8.3`
 * Allows users to configure `webroot`
 * Allows users to configure web server to (`apache` or `nginx`)
 * Allows users to configure database backend to (`mariadb`, `mysql`, or `postgres`)
@@ -61,7 +61,7 @@ git clone https://github.com/lando/drupal.git && cd drupal
 yarn install
 ```
 
-If you dont' want to install Node 14 or Yarn for whatever reason you can install [Lando](https://docs.lando.dev/basics/installation.html) and use that:
+If you don't want to install Node 18 or Yarn for whatever reason you can install [Lando](https://docs.lando.dev/basics/installation.html) and use that:
 
 ```bash
 git clone https://github.com/lando/drupal.git && cd drupal
