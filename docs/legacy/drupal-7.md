@@ -81,7 +81,7 @@ Because of how Lando's [php service](https://docs.lando.dev/plugins/php) sets up
 
 Said more explicitly: **if you've required `drush` via `composer` in your application then this recipe will use your `drush` and not the one you've specified in this recipes config.**
 
-If you are using a site-local Drush, it is also recommended to configure a [build step](https://docs.lando.dev/core/v3/lando-service.html#build-steps) to automatically install Drush before your app starts up. This can prevent weird version mismatches and other issues if you are using Drush in other Lando automation like [events](https://docs.lando.dev/core/v3/events.html).
+If you are using a site-local Drush, it is also recommended to configure a [build step](https://docs.lando.dev/core/v3/services/lando.html#build-steps) to automatically install Drush before your app starts up. This can prevent weird version mismatches and other issues if you are using Drush in other Lando automation like [events](https://docs.lando.dev/core/v3/events.html).
 
 **Automatically composer install before my app starts**
 
@@ -132,7 +132,7 @@ Make sure the alias file exists within the drush folder in your app. An example 
 
 For info on how to set up your alias, please refer to the following [link](https://www.drupal.org/node/1401522) or see this [example](https://github.com/drush-ops/drush/blob/8.x/examples/example.aliases.drushrc.php).
 
-Then configure the following [build step](https://docs.lando.dev/core/v3/lando-service.html#build-steps) in your [Landofile](https://docs.lando.dev/core/v3) and `lando rebuild`.
+Then configure the following [build step](https://docs.lando.dev/core/v3/services/lando.html#build-steps) in your [Landofile](https://docs.lando.dev/core/v3) and `lando rebuild`.
 
 ```yml
 services:
