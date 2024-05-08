@@ -33,7 +33,7 @@ Note that if the above config options are not enough all Lando recipes can be fu
 If you've initialized a site with `lando init` there is a good chance this is already set correctly. However, definitely make sure you are vibing the correct major version of Drupal as the underlying server config differs.
 
 ```yaml
-recipe: drupal10|drupal9|drupal8|drupal7|drupal6
+recipe: drupal11|drupal10|drupal9|drupal8|drupal7|drupal6
 config:
   php: '7.4'
 ```
@@ -62,7 +62,7 @@ config:
   composer_version: '1.10.1'
 ```
 
-By default, Drupal 9 and 10 use the latest version of Composer 2.x.
+By default, Drupal 9 and above use the latest version of Composer 2.x.
 
 ## Choosing a webserver
 

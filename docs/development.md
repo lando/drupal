@@ -140,6 +140,7 @@ jobs:
         leia-test:
           - examples/drupal10
           - examples/drupal11
+          - examples/drupal12
 
 ```
 
