@@ -47,7 +47,7 @@ function sidebar() {
     },
     {
       text: 'Contribution',
-      collapsed: true,
+      collapsed: false,
       items: [
         {text: 'Development', link: '/development'},
         {text: 'Team', link: '/team'},
@@ -55,14 +55,14 @@ function sidebar() {
     },
     {
       text: 'Help & Support',
-      collapsed: true,
+      collapsed: false,
       items: [
         {text: 'GitHub', link: 'https://github.com/lando/drupal/issues/new/choose'},
         {text: 'Slack', link: 'https://www.launchpass.com/devwithlando'},
         {text: 'Contact Us', link: '/support'},
+        {text: 'Examples', link: 'https://github.com/lando/drupal/tree/main/examples'},
       ],
     },
     {text: 'Guides', link: '/guides', activeMatch: '/guides'},
-    {text: 'Examples', link: 'https://github.com/lando/drupal/tree/main/examples'},
   ];
 };

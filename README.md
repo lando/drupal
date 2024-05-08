@@ -89,6 +89,12 @@ yarn test
 yarn release
 ```
 
+
+## Maintainers
+
+* [@pirog](https://github.com/pirog)
+* [@reynoldsalec](https://github.com/reynoldsalec)
+
 ## Contributors
 
 <a href="https://github.com/lando/drupal/graphs/contributors">

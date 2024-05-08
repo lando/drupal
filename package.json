@@ -1,7 +1,7 @@
 {
   "name": "@lando/drupal",
   "description": "A Lando plugin that provides a tight integration with Drupal.",
-  "version": "1.2.0",
+  "version": "1.4.0",
   "author": "Mike Pirog @pirog",
   "license": "GPL-3.0",
   "repository": "lando/drupal",
@@ -42,19 +42,19 @@
     "test": "npm run lint && npm run test:unit"
   },
   "dependencies": {
-    "@lando/mariadb": "^1.0.0",
+    "@lando/mariadb": "^1.1.0",
     "@lando/mssql": "^1.0.0",
-    "@lando/mysql": "^1.0.0",
+    "@lando/mysql": "^1.1.0",
     "@lando/nginx": "^1.0.0",
     "@lando/php": "^1.2.0",
-    "@lando/postgres": "^1.0.0",
+    "@lando/postgres": "^1.1.0",
     "lodash": "^4.17.21",
     "semver": "^7.5.4"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.16.0",
     "@lando/leia": "^0.6.5",
-    "@lando/vitepress-theme-default-plus": "^1.0.0-beta.39",
+    "@lando/vitepress-theme-default-plus": "^1.0.2",
     "chai": "^4.3.4",
     "command-line-test": "^1.0.10",
     "eslint": "^7.32.0",
