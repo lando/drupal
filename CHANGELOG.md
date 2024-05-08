@@ -1,14 +1,15 @@
-## Unreleased
+## UNRELEASED
 
+* Updated mariadb plugin and added tooling support for the mariadb executable. [#51](https://github.com/lando/mariadb/issues/51
 * Added support for Drupal 11
 
 ## v1.4.0 - [April 16, 2024](https://github.com/lando/drupal/releases/tag/v1.4.0)
-  
-  * Updated version of Composer used with Drupal 9 and 10 to `2-latest`. [#31](https://github.com/lando/drupal/issues/31)
+
+* Updated version of Composer used with Drupal 9 and 10 to `2-latest`. [#31](https://github.com/lando/drupal/issues/31)
 
 ## v1.3.0 - [March 8, 2024](https://github.com/lando/drupal/releases/tag/v1.3.0)
 
-  * Updated to latest database services.
+* Updated to latest database services.
 
 ## v1.2.0 - [February 26, 2024](https://github.com/lando/drupal/releases/tag/v1.2.0)
 
@@ -22,11 +23,11 @@
 * Included ability to specify `database: mssql` in the `config` section to maintain backwards compatibility. [@lando/mssql#31](https://github.com/lando/mssql/issues/31)
 
 ## v1.0.1 - [January 15, 2024](https://github.com/lando/drupal/releases/tag/v1.0.1)
-  
+
 * Fixed issue with missing `semver` dependency.
 
 ## v1.0.0 - [December 7, 2023](https://github.com/lando/drupal/releases/tag/v1.0.0)
-  
+
 * Dialed fully for `lando update`
 
 ## v0.12.0 - [October 4, 2023](https://github.com/lando/drupal/releases/tag/v0.12.0)

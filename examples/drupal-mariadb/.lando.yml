@@ -1,0 +1,9 @@
+name: lando-drupal-mariadb
+recipe: drupal10
+config:
+  php: '8.3'
+  composer_version: 2.7.4
+  webroot: web
+  database: 'mariadb:11.3'
+plugins:
+  '@lando/drupal': ../..
