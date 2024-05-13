@@ -98,7 +98,7 @@ lando start
 lando composer require drush/drush
 
 # Install drupal
-lando drush site:install --db-url=mysql://drupal10:drupal10@database/drupal10 -y
+lando drush site:install --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 
 # List information about this app
 lando info
