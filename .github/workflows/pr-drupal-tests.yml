@@ -16,6 +16,8 @@ jobs:
           - examples/drupal-defaults
           - examples/drupal-export
           - examples/drupal-import
+          - examples/drupal-mariadb
+          - examples/drupal-mariadb-mysql
           - examples/drupal-mysql8
           - examples/drupal-nginx
           - examples/drupal6
