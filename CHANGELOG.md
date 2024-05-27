@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.6.0 - [May 27, 2024](https://github.com/lando/drupal/releases/tag/v1.6.0)
+
 * Use mysql command for MariaDB 10.3.x and below
 
 ## v1.5.0 - [May 8, 2024](https://github.com/lando/drupal/releases/tag/v1.5.0)
