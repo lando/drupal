@@ -113,7 +113,6 @@ lando init --source cwd --recipe drupal9
 ```
 
 If you are interested in EOL Drupal versions then check out our legacy docs:
- - Drupal 8 (./legacy/drupal-8).
- - Drupal 7 (./legacy/drupal-7).
- - Drupal 6 (./legacy/drupal-6).
-
+ - [Drupal 8](./legacy/drupal-8).
+ - [Drupal 7](./legacy/drupal-7).
+ - [Drupal 6](./legacy/drupal-6).
