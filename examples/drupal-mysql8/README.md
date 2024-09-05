@@ -36,8 +36,8 @@ lando php -v | grep "PHP 8.1"
 
 # Should be running apache 2.4 by default
 cd mysql8
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 8.0.x by default
 cd mysql8
@@ -57,7 +57,7 @@ lando artisan env
 
 # Should use the defauly mysql8 config file
 cd mysql8
-lando ssh -s database -c "cat /opt/bitnami/mysql/conf/my_custom.cnf" | grep "LANDODRUPALMYSQL8CNF"
+lando exec database -- cat /opt/bitnami/mysql/conf/my_custom.cnf | grep "LANDODRUPALMYSQL8CNF"
 lando mysql -u root -e "show variables;" | grep innodb_lock_wait_timeout | grep 127
 ```
 

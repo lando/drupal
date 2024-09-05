@@ -42,7 +42,7 @@ lando db-export -h database database2.dump.sql
 
 # Should export to absolute path if specified
 lando db-export /tmp/database.dump.sql
-lando ssh -s database -c "stat /tmp/database.dump.sql.gz"
+lando exec database -- stat /tmp/database.dump.sql.gz
 
 # Should dump ungizzeed stdout
 lando db-export --stdout > thing.sql

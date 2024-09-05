@@ -1,5 +1,14 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## Bug Fixes
+
+* Fixed bug causing default `proxy` settings to be clobbered by user specified ones
+
+## Internal
+
+* Updated DevOps to use new `lando exec`
+* Updated `ubuntu` test runners to `24.04`
+
 ## v1.6.0 - [May 27, 2024](https://github.com/lando/drupal/releases/tag/v1.6.0)
 
 * Use mysql command for MariaDB 10.3.x and below

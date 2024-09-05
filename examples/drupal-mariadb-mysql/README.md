@@ -27,7 +27,7 @@ Run the following commands to validate things are rolling as they should.
 
 ```bash
 # Should serve from web folder
-lando ssh -s appserver -c "curl -L localhost" | grep "MySQL"
+lando exec appserver -- curl -L localhost | grep "MySQL"
 
 # Should use 8.3 as the default php version
 lando php -v | grep "PHP 8.3"
@@ -36,8 +36,8 @@ lando php -v | grep "PHP 8.3"
 lando composer -V | grep 2.7.4
 
 # Should be running apache 2.4 by default
-lando ssh -s appserver -c "apachectl -V" | grep 2.4
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mariadb 10.3.x
 lando mysql -V | grep "MariaDB" | grep 10.3.
@@ -49,7 +49,7 @@ lando php -m | grep xdebug || echo $? | grep 1
 lando mysql -udrupal10 -pdrupal10 drupal10 -e quit
 
 # Should use the default mariadb config file
-lando ssh -s database -c "cat /opt/bitnami/mariadb/conf/my_custom.cnf" | grep "innodb_lock_wait_timeout = 121"
+lando exec database -- cat /opt/bitnami/mariadb/conf/my_custom.cnf | grep "innodb_lock_wait_timeout = 121"
 lando mysql -e "show variables;" | grep innodb_lock_wait_timeout | grep 121
 ```
 

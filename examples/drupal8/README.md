@@ -35,7 +35,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd drupal8
-lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 8"
+lando exec appserver -- curl -L localhost | grep "Drupal 8"
 
 # Should use 7.3 as the default php version
 cd drupal8
@@ -43,8 +43,8 @@ lando php -v | grep "PHP 7.3"
 
 # Should be running apache 2.4 by default
 cd drupal8
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 8.0
 cd drupal8

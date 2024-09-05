@@ -32,7 +32,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd drupal6
-lando ssh -s appserver -c "curl -L localhost" | grep "Choose language"
+lando exec appserver -- curl -L localhost | grep "Choose language"
 
 # Should use 5.6 as the default php version
 cd drupal6
@@ -40,8 +40,8 @@ lando php -v | grep "PHP 5.6"
 
 # Should be running apache 2.4 by default
 cd drupal6
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 5.7 by default
 cd drupal6

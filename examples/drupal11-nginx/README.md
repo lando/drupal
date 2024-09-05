@@ -32,7 +32,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd nginx
-lando ssh -s appserver -c "curl -L appserver_nginx" | grep "Drupal 11"
+lando exec appserver -- curl -L appserver_nginx | grep "Drupal 11"
 
 # Should use 8.3 as the default php version
 cd nginx
@@ -40,8 +40,8 @@ lando php -v | grep "PHP 8.3"
 
 # Should be running nginx 1.25 by default
 cd nginx
-lando ssh -s appserver_nginx -c "nginx -v 2>&1 | grep 1.25"
-lando ssh -s appserver -c "curl -IL appserver_nginx" | grep Server | grep nginx
+lando exec appserver_nginx -- nginx -v 2>&1 | grep 1.25
+lando exec appserver -- curl -IL appserver_nginx | grep Server | grep nginx
 
 # Should be running mysql 8.0.x by default
 cd nginx
@@ -62,7 +62,7 @@ lando mysql -udrupal11 -pdrupal11 drupal11 -e quit
 # Should use site-local drush if installed
 cd nginx
 lando composer require drush/drush
-lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
+lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 
 # Should be able to install drupal
 cd nginx
@@ -71,7 +71,7 @@ lando drush si --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 # Should be able to enable and access jsonapi
 cd nginx
 lando drush en jsonapi -y
-lando ssh -c "curl lando-drupal11-nginx.lndo.site/jsonapi" | grep "action--action"
+lando exec appserver -- curl lando-drupal11-nginx.lndo.site/jsonapi | grep "action--action"
 ```
 
 Destroy tests

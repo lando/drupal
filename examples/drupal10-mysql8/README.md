@@ -32,7 +32,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd mysql8
-lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 10"
+lando exec appserver -- curl -L localhost | grep "Drupal 10"
 
 # Should use 8.1 as the default php version
 cd mysql8
@@ -40,8 +40,8 @@ lando php -v | grep "PHP 8.1"
 
 # Should be running apache 2.4 by default
 cd mysql8
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 8.0.x by default
 cd mysql8
@@ -62,7 +62,7 @@ lando mysql -udrupal10 -pdrupal10 drupal10 -e quit
 # Should use site-local drush if installed
 cd mysql8
 lando composer require drush/drush
-lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
+lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 
 # Should be able to install drupal
 cd mysql8

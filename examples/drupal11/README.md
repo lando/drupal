@@ -32,7 +32,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd drupal11
-lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 11"
+lando exec appserver -- curl -L localhost | grep "Drupal 11"
 
 # Should use 8.3 as the default php version
 cd drupal11
@@ -40,8 +40,8 @@ lando php -v | grep "PHP 8.3"
 
 # Should be running apache 2.4 by default
 cd drupal11
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 8.0.x by default
 cd drupal11
@@ -66,7 +66,7 @@ lando composer --version | cut -d " " -f 3 | head -n 1 | awk -v min=2.7.0 -F. '(
 # Should use site-local drush if installed
 cd drupal11
 lando composer require drush/drush
-lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
+lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 
 # Should be able to install drupal
 cd drupal11
@@ -75,7 +75,7 @@ lando drush si --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 # Should be able to enable and access jsonapi
 cd drupal11
 lando drush en jsonapi -y
-lando ssh -c "curl localhost/jsonapi" | grep "action--action"
+lando exec appserver -- curl localhost/jsonapi | grep "action--action"
 ```
 
 Destroy tests
