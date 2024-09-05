@@ -20,7 +20,7 @@ lando init --source remote --remote-url https://ftp.drupal.org/files/projects/dr
 
 # Should start up successfully
 cd drupal7
-cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
+cp -f ../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando start
 ```
 
@@ -32,7 +32,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd drupal7
-lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 7"
+lando exec appserver -- curl -L localhost | grep "Drupal 7"
 
 # Should use 7.4 as the default php version
 cd drupal7
@@ -40,8 +40,8 @@ lando php -v | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 cd drupal7
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 5.7 by default
 cd drupal7
@@ -69,12 +69,13 @@ lando drush eval "phpinfo();" | grep memory_limit | grep -e "-1"
 
 # Should have SIMPLETEST envvars set correctly
 cd drupal7
-lando ssh -s appserver -c "env" | grep SIMPLETEST_BASE_URL | grep "https://appserver"
-lando ssh -s appserver -c "env" | grep SIMPLETEST_DB | grep "mysql://drupal7:drupal7@database/drupal7"
+lando exec appserver -- env | grep SIMPLETEST_BASE_URL | grep "https://appserver"
+lando exec appserver -- env | grep SIMPLETEST_DB | grep "mysql://drupal7:drupal7@database/drupal7"
 
 # Should have proxy urls present in lando info
 cd drupal7
-lando info |grep "lando-drupal7.lndo.site"
+lando info | grep "lando-drupal7.lndo.site"
+lando info | grep "another.lando-drupal7.lndo.site"
 
 # Should be able to pipe data directly into lando drush sql-cli
 cd drupal7

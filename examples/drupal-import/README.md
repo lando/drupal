@@ -33,7 +33,7 @@ lando db-import -h database subdir/test.sql
 lando mysql drupal10 -e "show tables;" | grep users
 
 # Should be able to use db-import events
-lando ssh -s database -c "cat /tmp/iran.txt"
+lando exec database -- cat /tmp/iran.txt
 
 # Should persist data after a rebuild
 lando rebuild -y

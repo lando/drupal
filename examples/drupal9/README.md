@@ -32,7 +32,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd drupal9
-lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 9"
+lando exec appserver -- curl -L localhost | grep "Drupal 9"
 
 # Should use 8.0 as the default php version
 cd drupal9
@@ -40,8 +40,8 @@ lando php -v | grep "PHP 8.0"
 
 # Should be running apache 2.4 by default
 cd drupal9
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 5.7 by default
 cd drupal9
@@ -63,11 +63,10 @@ lando mysql -udrupal9 -pdrupal9 drupal9 -e quit
 cd drupal9
 lando composer --version | cut -d " " -f 3 | head -n 1 | awk -v min=2.3.6 -F. '($1 > 2) || ($1 == 2 && $2 > 3) || ($1 == 2 && $2 == 3 && $3 > 6)'
 
-
 # Should use site-local drush if installed
 cd drupal9
 lando composer require drush/drush
-lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
+lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 
 # Should be able to install drupal
 cd drupal9

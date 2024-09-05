@@ -32,7 +32,7 @@ Run the following commands to validate things are rolling as they should.
 ```bash
 # Should return the drupal installation page by default
 cd drupal10
-lando ssh -s appserver -c "curl -L localhost" | grep "Drupal 10"
+lando exec appserver -- curl -L localhost | grep "Drupal 10"
 
 # Should use 8.1 as the default php version
 cd drupal10
@@ -40,8 +40,8 @@ lando php -v | grep "PHP 8.1"
 
 # Should be running apache 2.4 by default
 cd drupal10
-lando ssh -s appserver -c "apachectl -V | grep 2.4"
-lando ssh -s appserver -c "curl -IL localhost" | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 
 # Should be running mysql 5.7 by default
 cd drupal10
@@ -66,7 +66,7 @@ lando composer --version | cut -d " " -f 3 | head -n 1 | awk -v min=2.3.6 -F. '(
 # Should use site-local drush if installed
 cd drupal10
 lando composer require drush/drush
-lando ssh -c "which drush" | grep "/app/vendor/bin/drush"
+lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 
 # Should be able to install drupal
 cd drupal10
@@ -75,7 +75,7 @@ lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 # Should be able to enable and access jsonapi
 cd drupal10
 lando drush en jsonapi -y
-lando ssh -c "curl localhost/jsonapi" | grep "action--action"
+lando exec appserver -- curl localhost/jsonapi | grep "action--action"
 ```
 
 Destroy tests
