@@ -1,0 +1,3 @@
+name: placeholder
+plugins:
+  "@lando/drupal": ..
