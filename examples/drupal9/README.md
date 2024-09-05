@@ -63,7 +63,6 @@ lando mysql -udrupal9 -pdrupal9 drupal9 -e quit
 cd drupal9
 lando composer --version | cut -d " " -f 3 | head -n 1 | awk -v min=2.3.6 -F. '($1 > 2) || ($1 == 2 && $2 > 3) || ($1 == 2 && $2 == 3 && $3 > 6)'
 
-
 # Should use site-local drush if installed
 cd drupal9
 lando composer require drush/drush
