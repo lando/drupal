@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.6.1 - [September 5, 2024](https://github.com/lando/drupal/releases/tag/v1.6.1)
+
 ## Bug Fixes
 
 * Fixed bug causing default `proxy` settings to be clobbered by user specified ones
