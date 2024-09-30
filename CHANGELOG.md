@@ -1,8 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-  * Updated lando/mariadb to v1.5.0.
-
-  - Updated lando/mysql to v1.3.0.
+* Updated lando/mariadb to v1.5.0.
+* Updated lando/mysql to v1.3.0.
 
 ## v1.6.1 - [September 5, 2024](https://github.com/lando/drupal/releases/tag/v1.6.1)
 
