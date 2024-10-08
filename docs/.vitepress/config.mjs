@@ -19,6 +19,9 @@ export default defineConfig({
     ['link', {rel: 'icon', href: '/drupal/favicon.svg', type: 'image/svg+xml'}],
   ],
   themeConfig: {
+    multiVersionBuild: {
+      satisfies: '>=1.2.0',
+    },
     sidebar: sidebar(),
   },
 });
