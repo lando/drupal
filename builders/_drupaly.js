@@ -189,8 +189,12 @@ const getDbTooling = database => {
 const getProxy = (options, proxyService = 'appserver') => {
   // get any intial proxy stuff for proxyService
   const urls = _.get(options, `_app.config.proxy.${proxyService}`, []);
-  // add
-  urls.push(`${options.app}.${options._app._config.domain}`);
+
+  // if urls doesn't have the lando generated domain, add it in
+  if (!_.find(urls, {hostname: `${options.app}.${options._app._config.domain}`})) {
+    urls.push({hostname: `${options.app}.${options._app._config.domain}`});
+  }
+
   // return
   return {[proxyService]: _.uniq(_.compact(urls))};
 };
