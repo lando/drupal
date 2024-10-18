@@ -34,6 +34,10 @@ lando php -v | grep "PHP 8.3"
 # Should use composer 2.0.7
 lando exec appserver -- /bin/sh -c 'NO_COLOR=1 composer -V' | grep "Composer version 2.0.7"
 
+# Should serve and be accessible over ssl if specified
+lando exec appserver_nginx -- curl https://localhost
+lando exec appserver -- curl https://appserver_nginx
+
 # Should be running mysql 5.7 by default
 lando mysql -V | grep 5.7
 
