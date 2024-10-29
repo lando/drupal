@@ -1,19 +1,20 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Released to update critically broken docs
+
 ## v1.9.0 - [October 25, 2024](https://github.com/lando/drupal/releases/tag/v1.9.0)
 
 * Updated release process to generate an edge release when stable releases are created.
-
-  * Removed unnecessary dependency lando/nginx.
+* Removed unnecessary dependency `@lando/nginx`
 
 ## v1.8.0 - [October 18, 2024](https://github.com/lando/drupal/releases/tag/v1.8.0)
 
-* Updated lando/php to v1.5.0.
+* Updated to [@lando/php@1.5.0](https://github.com/lando/php/releases/tag/v1.5.0)
 
 ## v1.7.0 - [September 30, 2024](https://github.com/lando/drupal/releases/tag/v1.7.0)
 
-* Updated lando/mariadb to v1.5.0.
-* Updated lando/mysql to v1.3.0.
+* Updated to [@lando/mariadb@1.5.0](https://github.com/lando/mariadb/releases/tag/v1.5.0)
+* Updated to [@lando/mysql@1.5.0](https://github.com/lando/mariadb/releases/tag/v1.3.0)
 
 ## v1.6.1 - [September 5, 2024](https://github.com/lando/drupal/releases/tag/v1.6.1)
 
