@@ -1,12 +1,10 @@
-Drupal 8 Example
-================
+# Drupal 8 Example
 
 This example exists primarily to test the following documentation:
 
 * [Drupal 8 Recipe](https://docs.devwithlando.io/tutorials/drupal8.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -27,8 +25,7 @@ cd drupal8
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -88,8 +85,7 @@ lando composer require drush/drush:10.2.2
 lando drush version | grep 10.2.2
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

@@ -1,5 +1,3 @@
 proxy:
   appserver:
     - another.lando-drupal7.lndo.site
-plugins:
-  "@lando/drupal": ../../..

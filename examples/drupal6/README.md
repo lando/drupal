@@ -1,12 +1,10 @@
-Drupal 6 Example
-================
+# Drupal 6 Example
 
 This example exists primarily to test the following documentation:
 
 * [Drupal 6 Recipe](https://docs.devwithlando.io/tutorials/drupal6.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -24,8 +22,7 @@ cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -64,8 +61,7 @@ cd drupal6
 lando drush si --db-url=mysql://drupal6:drupal6@database/drupal6 -y
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 
