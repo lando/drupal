@@ -4,8 +4,7 @@ This example exists primarily to test the following documentation:
 
 * [Drupal Recipe](https://docs.lando.dev/drupal/tooling.html#importing-your-database)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -15,8 +14,7 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -49,8 +47,7 @@ lando db-export --stdout > thing.sql
 cat thing.sql | grep Dump
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

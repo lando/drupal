@@ -1,12 +1,10 @@
-Drupal 10 w/Nginx Example
-================
+# Drupal 10 w/nginx Example
 
 This example exists primarily to test the following documentation:
 
 * [Drupal 10 Recipe](https://docs.lando.dev/config/drupal10.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -24,8 +22,7 @@ cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -74,8 +71,7 @@ lando drush en jsonapi -y
 lando exec appserver -- curl lando-drupal10-nginx.lndo.site/jsonapi | grep "action--action"
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

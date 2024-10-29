@@ -1,12 +1,10 @@
-Drupal 7 Example
-================
+# Drupal 7 Example
 
 This example exists primarily to test the following documentation:
 
 * [Drupal 7 Recipe](https://docs.devwithlando.io/tutorials/drupal7.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -20,12 +18,12 @@ lando init --source remote --remote-url https://ftp.drupal.org/files/projects/dr
 
 # Should start up successfully
 cd drupal7
-cp -f ../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
+cp -f ../lando.local.yml .lando.local.yml && cat .lando.local.yml
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -86,8 +84,7 @@ lando drush sql-cli < dump.sql
 lando mysql drupal7 -e "show tables;" | grep user
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

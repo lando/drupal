@@ -1,12 +1,10 @@
-Drupal 10 w/MySQL 8 Example
-================
+# Drupal 10 w/MySQL 8 Example
 
 This example exists primarily to test the following documentation:
 
 * [Drupal 10 Recipe](https://docs.lando.dev/config/drupal10.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -24,8 +22,7 @@ cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -69,8 +66,7 @@ cd mysql8
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 

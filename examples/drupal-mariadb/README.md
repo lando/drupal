@@ -1,12 +1,10 @@
-Drupal MariaDB Example
-======================
+# Drupal MariaDB Example
 
 This example exists primarily to test the following documentation:
 
 * [Drupal Recipe](https://docs.devwithlando.io/tutorials/drupal.html)
 
-Start up tests
---------------
+## Start up tests
 
 Run the following commands to get up and running with this example.
 
@@ -18,8 +16,7 @@ lando poweroff
 lando start
 ```
 
-Verification commands
----------------------
+## Verification commands
 
 Run the following commands to validate things are rolling as they should.
 
@@ -51,8 +48,7 @@ lando exec database -- cat /opt/bitnami/mariadb/conf/my_custom.cnf | grep "innod
 lando mariadb -e "show variables;" | grep innodb_lock_wait_timeout | grep 121
 ```
 
-Destroy tests
--------------
+## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
 
