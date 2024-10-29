@@ -29,7 +29,7 @@ mkdir my-first-drupal11-app \
 
 # Start the environment
 lando start
-    
+
 # Create latest drupal11 project via composer
 lando composer create-project drupal/recommended-project:11.x tmp && cp -r tmp/. . && rm -rf tmp
 
@@ -55,15 +55,15 @@ mkdir my-first-drupal10-app \
     --recipe drupal10 \
     --webroot web \
     --name my-first-drupal10-app
-    
+
+# Start it up
+lando start
+
 # Create latest drupal10 project via composer
 lando composer create-project drupal/recommended-project:10.x tmp && cp -r tmp/. . && rm -rf tmp
 
 # Composer can timeout on install for some machines, if that happens, run the following command and then re-run the previous lando composer command:
 # lando composer config --global process-timeout 2000
-
-# Start it up
-lando start
 
 # Install a site local drush
 lando composer require drush/drush
@@ -84,15 +84,15 @@ mkdir my-first-drupal9-app \
     --recipe drupal9 \
     --webroot web \
     --name my-first-drupal9-app
-    
+
+# Start it up
+lando start
+
 # Create latest drupal9 project via composer
 lando composer create-project drupal/recommended-project:9.x tmp && cp -r tmp/. . && rm -rf tmp
 
 # Composer can timeout on install for some machines, if that happens, run the following command and then re-run the previous lando composer command:
 # lando composer config --global process-timeout 2000
-
-# Start it up
-lando start
 
 # Install a site local drush
 lando composer require drush/drush
@@ -117,4 +117,3 @@ If you are interested in EOL Drupal versions then check out our legacy docs:
  - [Drupal 8](./legacy/drupal-8).
  - [Drupal 7](./legacy/drupal-7).
  - [Drupal 6](./legacy/drupal-6).
-
