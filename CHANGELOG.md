@@ -1,5 +1,6 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated to [@lando/mysql@1.4.1](https://github.com/lando/mysql/releases/tag/v1.4.1)
 * Updated to [@lando/postgres@1.4.1](https://github.com/lando/postgres/releases/tag/v1.4.1)
 
 ## v1.9.2 - [November 4, 2024](https://github.com/lando/drupal/releases/tag/v1.9.2)
