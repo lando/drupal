@@ -1,5 +1,6 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated to [@lando/leia@1.0.0-beta.4](https://github.com/lando/leia/releases/tag/v1.0.0-beta.4)
 * Updated to [@lando/mariadb@1.6.1](https://github.com/lando/mariadb/releases/tag/v1.6.1)
 * Updated to [@lando/mssql@1.4.1](https://github.com/lando/mssql/releases/tag/v1.4.1)
 * Updated to [@lando/mysql@1.4.1](https://github.com/lando/mysql/releases/tag/v1.4.1)
