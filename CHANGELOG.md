@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.10.0 - [December 2, 2024](https://github.com/lando/drupal/releases/tag/v1.10.0)
+
 * Updated to [@lando/leia@1.0.0-beta.4](https://github.com/lando/leia/releases/tag/v1.0.0-beta.4)
 * Updated to [@lando/mariadb@1.6.1](https://github.com/lando/mariadb/releases/tag/v1.6.1)
 * Updated to [@lando/mssql@1.4.1](https://github.com/lando/mssql/releases/tag/v1.4.1)
