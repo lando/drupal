@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.10.1 - [December 4, 2024](https://github.com/lando/drupal/releases/tag/v1.10.1)
+
 * Updated to [@lando/vitepress-theme-default-plus@v1.1.0-beta.24](https://github.com/lando/vitepress-theme-default-plus/releases/tag/v1.1.0-beta.24).
 
 ## v1.10.0 - [December 2, 2024](https://github.com/lando/drupal/releases/tag/v1.10.0)
