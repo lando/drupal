@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.10.2 - [December 6, 2024](https://github.com/lando/drupal/releases/tag/v1.10.2)
+
 * Updated the version index.md to get Docuverse page to build correctly.
 
 ## v1.10.1 - [December 4, 2024](https://github.com/lando/drupal/releases/tag/v1.10.1)
