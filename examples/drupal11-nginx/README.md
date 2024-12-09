@@ -44,9 +44,9 @@ lando exec appserver -- curl -IL appserver_nginx | grep Server | grep nginx
 cd nginx
 lando mysql -V | grep 8.0
 
-# Should be running sqlite 3.34 by default
+# Should be running sqlite 3.40 by default
 cd nginx
-lando php -r "print_r(SQLite3::version());" | grep versionString | grep 3.34
+lando php -r "print_r(SQLite3::version());" | grep versionString | grep 3.40
 
 # Should not enable xdebug by default
 cd nginx

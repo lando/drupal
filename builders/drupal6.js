@@ -21,6 +21,6 @@ module.exports = {
   builder: (parent, config) => class LandoDrupal6 extends parent {
     constructor(id, options = {}) {
       super(id, _.merge({}, config, options));
-    };
+    }
   },
 };

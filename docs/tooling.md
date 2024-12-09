@@ -55,7 +55,7 @@ Once you do, Lando will be able to use `drush` normally.
 
 #### Build steps
 
-Once `drush` is listed in your `composer.json` it is also recommended to configure a [build step](https://docs.lando.dev/core/v3/services/lando.html#build-steps) to automatically install Drush before your app starts up. This ensures `drush` is available after `lando start` and during any other build steps or events.
+Once `drush` is listed in your `composer.json` it is also recommended to configure a [build step](https://docs.lando.dev/services/lando-3.html#build-steps) to automatically install Drush before your app starts up. This ensures `drush` is available after `lando start` and during any other build steps or events.
 
 **Automatically composer install before my app starts**
 
@@ -67,7 +67,7 @@ services:
       - composer install
 ```
 
-If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor` you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/core/v3/tooling.html#overriding) and specify an absolute path to your Drush.
+If you find that Lando is not using your `drush` as expected, which can happen if you've modified `composer` to install in a different directory than its normal `vendor` you can take advantage of Lando's [tooling overrides](https://docs.lando.dev/landofile/tooling.html#overriding) and specify an absolute path to your Drush.
 
 ```yaml
 tooling:
