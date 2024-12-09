@@ -44,9 +44,9 @@ lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 cd drupal10
 lando mysql -V | grep 5.7
 
-# Should be running sqlite 3.34 by default
+# Should be running sqlite 3.40 by default
 cd drupal10
-lando php -r "print_r(SQLite3::version());" | grep versionString | grep 3.34
+lando php -r "print_r(SQLite3::version());" | grep versionString | grep 3.40
 
 # Should not enable xdebug by default
 cd drupal10
