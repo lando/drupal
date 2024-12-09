@@ -5,7 +5,7 @@ description: Learn how to develop and contribute to the Lando Drupal service
 
 # Development
 
-This guide contains information to help onboard developers to work on the [drupal](https://www.drupal.org/) integration, hereafter referred to as *the plugin*.
+This guide contains information to help onboard developers to work on the [drupal](https://new.drupal.org/home) integration, hereafter referred to as *the plugin*.
 
 ## Requirements
 
