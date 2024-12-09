@@ -31,11 +31,11 @@ jobs:
           - examples/drupal11
           - examples/drupal11-nginx
         lando-version:
-          - 3-edge-slim
+          - 3-edge
         os:
           - ubuntu-24.04
         node-version:
-          - '18'
+          - '20'
     steps:
       - name: Checkout code
         uses: actions/checkout@v4

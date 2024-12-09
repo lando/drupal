@@ -7,9 +7,9 @@ const LandoPostgres = require('./../node_modules/@lando/postgres/builders/postgr
 module.exports = {
   name: 'drupal-postgres',
   parent: '_service',
-  builder: (parent, config) => class DrupalPostgres extends LandoPostgres.builder(parent, LandoPostgres.config) {
+  builder: parent => class DrupalPostgres extends LandoPostgres.builder(parent, LandoPostgres.config) {
     constructor(id, options = {}) {
       super(id, options, {services: _.set({}, options.name)});
-    };
+    }
   },
 };

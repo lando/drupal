@@ -285,6 +285,6 @@ module.exports = {
 
       // Send downstream
       super(id, _.merge({}, config, options));
-    };
+    }
   },
 };

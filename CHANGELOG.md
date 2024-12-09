@@ -1,5 +1,12 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Optimized for `midcore`
+* Updated to [@lando/mariadb@1.6.3](https://github.com/lando/mariadb/releases/tag/v1.6.3).
+* Updated to [@lando/mssql@1.4.3](https://github.com/lando/mssql/releases/tag/v1.4.3).
+* Updated to [@lando/mysql@1.4.4](https://github.com/lando/mysql/releases/tag/v1.4.4).
+* Updated to [@lando/php@1.6.3](https://github.com/lando/php/releases/tag/v1.6.3).
+* Updated to [@lando/postgres@1.4.4](https://github.com/lando/postgres/releases/tag/v1.4.4).
+
 ## v1.10.2 - [December 6, 2024](https://github.com/lando/drupal/releases/tag/v1.10.2)
 
 * Updated the version index.md to get Docuverse page to build correctly.
