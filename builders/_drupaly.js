@@ -144,6 +144,7 @@ const getServices = options => ({
     via: options.via,
     xdebug: options.xdebug,
     webroot: options.webroot,
+    suffix: 5,
   },
   database: {
     config: getServiceConfig(options, ['database']),
