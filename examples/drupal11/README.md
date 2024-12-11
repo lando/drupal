@@ -73,11 +73,8 @@ lando drush si --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 cd drupal11
 lando drush en jsonapi -y
 lando exec appserver -- curl localhost/jsonapi | grep "action--action"
-```
 
 # Should have recipe defaults
-
-```bash
 cd drupal11
 cat .lando.yml | grep "php: 8.3"
 cat .lando.yml | grep "drush: ^13"
