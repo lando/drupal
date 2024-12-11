@@ -75,6 +75,18 @@ lando drush en jsonapi -y
 lando exec appserver -- curl localhost/jsonapi | grep "action--action"
 ```
 
+# Should have recipe defaults
+
+```bash
+cd drupal11
+cat .lando.yml | grep "php: 8.3"
+cat .lando.yml | grep "drush: ^13"
+cat .lando.yml | grep "composer_version: 2-latest"
+
+# Should still have webroot
+cat .lando.yml | grep "webroot: ."
+```
+
 ## Destroy tests
 
 Run the following commands to trash this app like nothing ever happened.
