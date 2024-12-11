@@ -5,4 +5,7 @@
  */
 module.exports = {
   name: 'drupal8',
+  defaults: {
+    'php': '7.3',
+  },
 };

@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Added default config values to the `.lando.yml` file after init.
+
 ## v1.11.0 - [December 9, 2024](https://github.com/lando/drupal/releases/tag/v1.11.0)
 
 * Optimized for `midcore`
