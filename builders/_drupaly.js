@@ -9,7 +9,7 @@ const utils = require('../lib/utils.js');
 const warnings = require('../lib/warnings.js');
 
 // "Constants"
-const DRUSH8 = '8.4.8';
+const DRUSH8 = '8.5.0';
 const DRUSH7 = '7.4.0';
 
 // Tooling defaults
