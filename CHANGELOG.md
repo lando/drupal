@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated to [@lando/php@1.6.4](https://github.com/lando/php/releases/tag/v1.6.4).
+
 ## v1.11.0 - [December 9, 2024](https://github.com/lando/drupal/releases/tag/v1.11.0)
 
 * Optimized for `midcore`
