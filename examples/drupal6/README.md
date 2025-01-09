@@ -14,7 +14,7 @@ lando poweroff
 
 # Should initialize the latest D6 codebase
 rm -rf drupal6 && mkdir -p drupal6 && cd drupal6
-lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-6.38.tar.gz --remote-options="--strip-components 1" --recipe drupal6 --webroot . --name lando-drupal6
+lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-6.38.tar.gz --remote-options="--strip-components 1" --recipe drupal6 --webroot . --name lando-drupal6 --option "composer_version=2.2-latest"
 
 # Should start up successfully
 cd drupal6
@@ -52,9 +52,9 @@ lando php -m | grep xdebug || echo $? | grep 1
 cd drupal6
 lando mysql -udrupal6 -pdrupal6 drupal6 -e quit
 
-# Should use drush 8.5.0 by default
+# Should use drush 8.4.5 by default
 cd drupal6
-lando drush version | grep "8.4.5"
+lando drush version | tee >(cat 1>&2) | grep 8.4.5
 
 # Should be able to install drupal
 cd drupal6
