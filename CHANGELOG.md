@@ -1,7 +1,8 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-* Updated to [@lando/php@1.7.1](https://github.com/lando/php/releases/tag/v1.7.1).
 * Updated globally installed Drush to `v8.5.0`.
+* Updated to [@lando/php@1.7.1](https://github.com/lando/php/releases/tag/v1.7.1).
+* Updated to [@lando/mysql@1.5.0](https://github.com/lando/mysql/releases/tag/v1.5.0).
 
 ## v1.11.0 - [December 9, 2024](https://github.com/lando/drupal/releases/tag/v1.11.0)
 
