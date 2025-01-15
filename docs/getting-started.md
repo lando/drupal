@@ -63,7 +63,7 @@ lando start
 lando composer create-project drupal/cms tmp && cp -r tmp/. . && rm -rf tmp
 
 # Install drupal
-lando drush site:install --db-url=mysql://drupal11:drupal11@database/drupal11 -y
+lando drush site:install recipes/drupal_cms_starter --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 
 # List information about this app
 lando info
