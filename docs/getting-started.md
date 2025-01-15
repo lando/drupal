@@ -46,6 +46,29 @@ lando drush site:install --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 lando info
 ```
 
+```bash:no-line-numbers [DRUPAL CMS]
+# Initialize a drupal11 recipe
+mkdir my-drupalcms-app \
+  && cd my-drupalcms-app \
+  && lando init \
+    --source cwd \
+    --recipe drupal11 \
+    --webroot web \
+    --name my-drupalcms-app
+
+# Start the environment
+lando start
+
+# Create latest Drupal CMS project via composer
+lando composer create-project drupal/cms tmp && cp -r tmp/. . && rm -rf tmp
+
+# Install drupal
+lando drush site:install --db-url=mysql://drupal11:drupal11@database/drupal11 -y
+
+# List information about this app
+lando info
+```
+
 ```bash:no-line-numbers [DRUPAL 10]
 # Initialize a drupal10 recipe
 mkdir my-first-drupal10-app \
