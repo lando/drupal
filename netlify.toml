@@ -42,7 +42,7 @@
 # We need this so preview environments and the base site look ok on their own
 [[redirects]]
   from = "https://lando-drupal.netlify.app/*"
-  to = "https://docs.lando.dev/plugins/drupal/:splat"
+  to = "https://docs.lando.dev/:splat"
   status = 301
 [[redirects]]
   from = "/"
