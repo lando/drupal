@@ -73,6 +73,16 @@ lando drush si --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 cd drupal11
 lando drush en jsonapi -y
 lando exec appserver -- curl localhost/jsonapi | grep "action--action"
+
+# Should have recipe defaults
+cd drupal11
+cat .lando.yml | grep 'php: "8.3"'
+cat .lando.yml | grep "drush: ^13"
+cat .lando.yml | grep "composer_version: 2-latest"
+
+# Should still have webroot
+cd drupal11
+cat .lando.yml | grep "webroot: ."
 ```
 
 ## Destroy tests
