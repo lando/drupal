@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.12.0 - [January 16, 2025](https://github.com/lando/drupal/releases/tag/v1.12.0)
+
 * Updated globally installed Drush to `v8.5.0`.
 * Added docs for setting up [Drupal CMS](https://drupal.org/docs/drupal-cms).
 * Updated to [@lando/php@1.7.1](https://github.com/lando/php/releases/tag/v1.7.1).
