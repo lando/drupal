@@ -44,6 +44,7 @@
   from = "https://lando-drupal.netlify.app/"
   to = "https://docs.lando.dev/plugins/drupal"
   status = 301
+  force = true
 [[redirects]]
   from = "https://lando-drupal.netlify.app/*"
   to = "https://docs.lando.dev/:splat"
