@@ -1,6 +1,10 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
 * Added default config values to the `.lando.yml` file after init.
+* Updated globally installed Drush to `v8.5.0`.
+* Added docs for setting up [Drupal CMS](https://drupal.org/docs/drupal-cms).
+* Updated to [@lando/php@1.7.1](https://github.com/lando/php/releases/tag/v1.7.1).
+* Updated to [@lando/mysql@1.5.0](https://github.com/lando/mysql/releases/tag/v1.5.0).
 
 ## v1.11.0 - [December 9, 2024](https://github.com/lando/drupal/releases/tag/v1.11.0)
 

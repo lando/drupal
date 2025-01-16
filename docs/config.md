@@ -26,7 +26,11 @@ config:
     vhosts: SEE BELOW
 ```
 
-Note that if the above config options are not enough all Lando recipes can be further [extended and overriden](https://docs.lando.dev/landofile/recipes.html#extending-and-overriding-recipes).
+Note that if the above config options are not enough, all Lando recipes can be further [extended and overriden](https://docs.lando.dev/landofile/recipes.html#extending-and-overriding-recipes).
+
+::: tip Applying Configuration Changes
+After making changes to service configurations, you'll need to run `lando rebuild` for the changes to take effect. This rebuilds your app's services with the new configuration.
+:::
 
 ## Choosing a Drupal version
 

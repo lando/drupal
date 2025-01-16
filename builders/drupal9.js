@@ -27,7 +27,7 @@ module.exports = {
       // Set drush to false
       options.drush = false;
 
-      // Let's make sure we set appropripate default versions for things
+      // Let's make sure we set appropriate default versions for things
       // See: https://www.drupal.org/docs/9/how-drupal-9-is-made-and-what-is-included/environment-requirements-of-drupal-9
       if (_.get(options, 'database') === 'mysql') {
         options.database = 'mysql:5.7';
