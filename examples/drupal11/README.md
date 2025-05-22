@@ -76,7 +76,7 @@ lando exec appserver -- curl localhost/jsonapi | grep "action--action"
 
 # Should have recipe defaults
 cd drupal11
-cat .lando.yml | grep 'php: "8.3"'
+cat .lando.yml | tee >(cat 1>&2) | grep 'php: "8.3"'
 cat .lando.yml | grep "drush: ^13"
 cat .lando.yml | grep "composer_version: 2-latest"
 
