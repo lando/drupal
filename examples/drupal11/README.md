@@ -12,11 +12,6 @@ Run the following commands to get up and running with this example.
 # Should poweroff
 lando poweroff
 
-# Should use this version of the plugin
-mkdir -p ~/.lando/plugins/@lando
-rm -rf ~/.lando/plugins/@lando/drupal
-ln -s ../.. ~/.lando/plugins/@lando/drupal
-
 # Should initialize the latest Drupal 11 codebase
 rm -rf drupal11 && mkdir -p drupal11 && cd drupal11
 lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-11.0.x-dev.tar.gz --remote-options="--strip-components 1" --recipe drupal11 --webroot . --name lando-drupal11
