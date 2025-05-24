@@ -4,7 +4,6 @@
 const fs = require('fs');
 const _ = require('lodash');
 const path = require('path');
-const semver = require('semver');
 const utils = require('../lib/utils.js');
 const warnings = require('../lib/warnings.js');
 
@@ -161,25 +160,26 @@ const getServices = options => ({
 /*
  * Helper to get the phar build command
  */
-const getDbTooling = database => {
-  // Make sure we strip out any version number
-  const db = database.split(':')[0];
-  const ver = database.split(':')[1];
+const getDbTooling = (database, options) => {
+  const semver = options._app._lando.utils.getSemver();
+  const [db, ver] = database.split(':');
   // Choose wisely
   if (db === 'mysql') {
-    return {mysql: mysqlCli};
-  } else if (db === 'mariadb' && ver < 10.4) {
+    return { mysql: mysqlCli };
+  } else if (db === 'mariadb' && semver.lt(semver.coerce(ver), '10.4.0')) {
     // Use mysql command for MariaDB 10.3.x and below
-    return {mysql: mysqlCli};
+    return { mysql: mysqlCli };
   } else if (db === 'mariadb') {
-    return {mariadb: mariadbCli};
+    return { mariadb: mariadbCli };
   } else if (db === 'postgres') {
-    return {psql: postgresCli};
+    return { psql: postgresCli };
   } else if (db === 'mongo') {
-    return {mongo: {
-      service: 'database',
-      description: 'Drop into the mongo shell',
-    }};
+    return {
+      mongo: {
+        service: 'database',
+        description: 'Drop into the mongo shell',
+      }
+    };
   }
 };
 
@@ -192,7 +192,7 @@ const getProxy = (options, proxyService = 'appserver') => {
   // add
   urls.push(`${options.app}.${options._app._config.domain}`);
   // return
-  return {[proxyService]: _.uniq(_.compact(urls))};
+  return { [proxyService]: _.uniq(_.compact(urls)) };
 };
 
 /*
@@ -215,7 +215,7 @@ const getServiceConfig = (options, types = ['php', 'server', 'vhosts']) => {
 /*
  * Helper to get tooling
  */
-const getTooling = options => _.merge({}, toolingDefaults, getDbTooling(options.database));
+const getTooling = options => _.merge({}, toolingDefaults, getDbTooling(options.database, options));
 
 /*
  * Build Drupal 7
@@ -228,22 +228,26 @@ module.exports = {
     composer: {},
     confSrc: __dirname,
     config: {},
-    database: 'mysql',
+    database: 'mysql:5.7',
     defaultFiles: {
       php: 'php.ini',
     },
     php: '7.2',
-    tooling: {drush: {
-      service: 'appserver',
-    }},
-    via: 'apache',
+    tooling: {
+      drush: {
+        service: 'appserver',
+      }
+    },
+    via: 'apache:2.4',
     webroot: '.',
     xdebug: false,
     proxy: {},
   },
   builder: (parent, config) => class LandoDrupal extends parent {
     constructor(id, options = {}) {
+      const semver = options._app._lando.utils.getSemver();
       options = _.merge({}, config, options);
+
       // Set the default drush version if we don't have it
       if (!_.has(options, 'drush')) options.drush = (options.php === '5.3') ? DRUSH7 : DRUSH8;
 
@@ -264,12 +268,16 @@ module.exports = {
       }
 
       // Set legacy envars
-      options.services = _.merge({}, options.services, {appserver: {overrides: {
-        environment: {
-          SIMPLETEST_BASE_URL: (options.via === 'nginx') ? 'https://appserver_nginx' : 'https://appserver',
-          SIMPLETEST_DB: `mysql://${options.recipe}:${options.recipe}@database/${options.recipe}`,
-        },
-      }}});
+      options.services = _.merge({}, options.services, {
+        appserver: {
+          overrides: {
+            environment: {
+              SIMPLETEST_BASE_URL: (options.via === 'nginx') ? 'https://appserver_nginx' : 'https://appserver',
+              SIMPLETEST_DB: `mysql://${options.recipe}:${options.recipe}@database/${options.recipe}`,
+            },
+          }
+        }
+      });
 
       // Switch the proxy service if needed
       if (!_.has(options, 'proxyService')) {
