@@ -14,11 +14,11 @@ lando poweroff
 
 # Should initialize the latest Drupal 11 codebase
 rm -rf drupal11 && mkdir -p drupal11 && cd drupal11
-lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-11.0.x-dev.tar.gz --remote-options="--strip-components 1" --recipe drupal11 --webroot . --name lando-drupal11
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
+lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-11.2.x-dev.tar.gz --remote-options="--strip-components 1" --recipe drupal11 --webroot . --name lando-drupal11
 
 # Should start up successfully
 cd drupal11
-cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando start
 ```
 
@@ -27,6 +27,12 @@ lando start
 Run the following commands to validate things are rolling as they should.
 
 ```bash
+# Should include recipe defaults in the landofile
+cd drupal11
+cat .lando.yml | tee >(cat 1>&2) | grep 'php: "8.3"'
+cat .lando.yml | grep "drush: ^13"
+cat .lando.yml | grep "composer_version: 2-latest"
+
 # Should return the drupal installation page by default
 cd drupal11
 lando exec appserver -- curl -L localhost | grep "Drupal 11"
@@ -74,13 +80,7 @@ cd drupal11
 lando drush en jsonapi -y
 lando exec appserver -- curl localhost/jsonapi | grep "action--action"
 
-# Should have recipe defaults
-cd drupal11
-cat .lando.yml | tee >(cat 1>&2) | grep 'php: "8.3"'
-cat .lando.yml | grep "drush: ^13"
-cat .lando.yml | grep "composer_version: 2-latest"
-
-# Should still have webroot
+# Should have webroot set in the landofile
 cd drupal11
 cat .lando.yml | grep "webroot: ."
 ```

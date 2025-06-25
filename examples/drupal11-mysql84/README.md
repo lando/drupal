@@ -1,6 +1,6 @@
-# Drupal 11 Example
+# Drupal 11 with MySQL 8.4 Example
 
-This example exists primarily to test the following documentation against mysql 8.4:
+This example exists primarily to test the following documentation against MySQL 8.4:
 
 * [Drupal 11 Recipe](https://docs.lando.dev/plugins/drupal)
 
@@ -35,7 +35,7 @@ cat .lando.yml | grep "composer_version: 2-latest"
 
 # Should be running mysql 8.4.x
 cd drupal11
-lando mysql -V | tee >(cat 2>&1) | grep 8.4
+lando mysql -V | tee >(cat 1>&2) | grep '8.4.'
 
 # Should return the drupal installation page by default
 cd drupal11
@@ -47,8 +47,8 @@ lando php -v | grep "PHP 8.3"
 
 # Should be running apache 2.4 by default
 cd drupal11
-lando exec appserver -- apachectl -V | grep 2.4
-lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | grep '2.4'
+lando exec appserver -- curl -IL localhost | grep Server | grep '2.4'
 
 # Should be running sqlite 3.45 by default
 cd drupal11
@@ -68,12 +68,12 @@ lando composer --version | cut -d " " -f 3 | head -n 1 | awk -v min=2.7.0 -F. '(
 
 # Should use site-local drush if installed
 cd drupal11
-lando composer require drush/drush
+lando composer require drush/drush --no-interaction
 lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 
 # Should be able to install drupal
 cd drupal11
-lando drush si --db-url=mysql://drupal11:drupal11@database/drupal11 -y
+lando drush site:install --db-url=mysql://drupal11:drupal11@database/drupal11 -y
 
 # Should be able to enable and access jsonapi
 cd drupal11
@@ -82,13 +82,37 @@ lando exec appserver -- curl localhost/jsonapi | grep "action--action"
 
 # Should be able to dump the database with drush
 cd drupal11
-lando drush sql-dump --result-file=drupal11.sql
-lando mysql -udrupal11 -pdrupal11 drupal11 -e "SELECT COUNT(*) FROM users;" | grep 1
+lando drush sql-dump --result-file=drupal11.sql --extra-dump="--no-tablespaces"
+lando mysql -udrupal11 -pdrupal11 drupal11 -e "SELECT COUNT(*) FROM users;" | grep -A 2 COUNT | tee >(cat 1>&2) | grep 2
 
-# Should be able to restore the database with drush
+# Should be able to drop and restore the database with drush
 cd drupal11
 lando drush sql-drop -y
 lando drush sql-cli < drupal11.sql
+lando mysql -udrupal11 -pdrupal11 drupal11 -e "SELECT COUNT(*) FROM users;" | grep -A 2 COUNT | tee >(cat 1>&2) | grep 2
+
+# Should be able to export the database with Lando
+cd drupal11
+rm -f drupal11.sql
+lando db-export drupal11.sql
+
+# Should be able to import the database with Lando
+cd drupal11
+lando db-import drupal11.sql.gz
+lando mysql -udrupal11 -pdrupal11 drupal11 -e "SELECT COUNT(*) FROM users;" | grep -A 2 COUNT | tee >(cat 1>&2) | grep 2
+
+# Should be able to drop database tables
+cd drupal11
+lando drush sql-drop -y
+
+# Should be able to pipe in file through appserver
+cd drupal11
+lando exec appserver -- 'zcat drupal11.sql.gz | mysql -h database -udrupal11 -pdrupal11 drupal11'
+lando mysql -udrupal11 -pdrupal11 drupal11 -e "SELECT COUNT(*) FROM users;" | grep -A 2 COUNT | tee >(cat 1>&2) | grep 2
+
+# Should bootstrap Drupal successfully
+cd drupal11
+lando drush status | grep "Drupal bootstrap" | tee >(cat 1>&2) | grep "Successful"
 ```
 
 ## Destroy tests

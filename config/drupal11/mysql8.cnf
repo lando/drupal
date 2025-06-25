@@ -4,9 +4,6 @@
 # LANDODRUPALMYSQL8CNF
 
 [server]
-# Basic settings
-mysql_native_password=ON
-
 # Character sets and SQL mode
 character_set_server = utf8mb4
 collation_server = utf8mb4_general_ci
@@ -48,6 +45,9 @@ innodb_adaptive_hash_index = 0
 innodb_use_native_aio = 0
 innodb_lock_wait_timeout = 127
 
+[mysqld-8.4]
+mysql_native_password=ON
+
 [client]
 default_character_set=utf8mb4
 max_allowed_packet = 64M
@@ -55,3 +55,4 @@ max_allowed_packet = 64M
 [mysqldump]
 quick
 quote-names
+no-tablespaces
