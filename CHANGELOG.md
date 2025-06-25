@@ -2,7 +2,6 @@
 
 * Updated MySQL config for better MySQL 8.4 support.
 * Added default config values to the `.lando.yml` file after init.
-* Removed `semver` dependency from the plugin.
 
 ## v1.12.0 - [January 16, 2025](https://github.com/lando/drupal/releases/tag/v1.12.0)
 
