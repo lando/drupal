@@ -4,6 +4,7 @@
 const fs = require('fs');
 const _ = require('lodash');
 const path = require('path');
+const semver = require('semver');
 const utils = require('../lib/utils.js');
 const warnings = require('../lib/warnings.js');
 
@@ -160,8 +161,7 @@ const getServices = options => ({
 /*
  * Helper to get the phar build command
  */
-const getDbTooling = (database, options) => {
-  const semver = options._app._lando.utils.getSemver();
+const getDbTooling = (database) => {
   const [db, ver] = database.split(':');
   // Choose wisely
   if (db === 'mysql') {
@@ -215,7 +215,7 @@ const getServiceConfig = (options, types = ['php', 'server', 'vhosts']) => {
 /*
  * Helper to get tooling
  */
-const getTooling = options => _.merge({}, toolingDefaults, getDbTooling(options.database, options));
+const getTooling = options => _.merge({}, toolingDefaults, getDbTooling(options.database));
 
 /*
  * Build Drupal 7
@@ -245,7 +245,6 @@ module.exports = {
   },
   builder: (parent, config) => class LandoDrupal extends parent {
     constructor(id, options = {}) {
-      const semver = options._app._lando.utils.getSemver();
       options = _.merge({}, config, options);
 
       // Set the default drush version if we don't have it
