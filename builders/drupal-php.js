@@ -1,8 +1,6 @@
 'use strict';
 
-const path = require('path');
-const landoPhpPath = path.join(__dirname, '../node_modules/@lando/php');
-const LandoPhp = require(`${landoPhpPath}/builders/php.js`);
+const LandoPhp = require('@lando/php/builders/php.js');
 
 /**
  * Drupal PHP builder class that extends Lando PHP builder.

@@ -1,7 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
-const LandoMssql = require('./../node_modules/@lando/mssql/builders/mssql.js');
+const LandoMssql = require('@lando/mssql/builders/mssql.js');
 
 // Builder
 module.exports = {

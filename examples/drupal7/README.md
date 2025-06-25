@@ -45,6 +45,10 @@ lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 cd drupal7
 lando mysql -V | grep 5.7
 
+# Should be using the mysql_native_password authentication plugin by default
+cd drupal7
+lando mysql -e "SELECT user,plugin FROM mysql.user;" | grep drupal7 | grep mysql_native_password
+
 # Should not enable xdebug by default
 cd drupal7
 lando php -m | grep xdebug || echo $? | grep 1

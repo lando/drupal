@@ -29,6 +29,7 @@ jobs:
           - examples/drupal10-mysql8
           - examples/drupal10-nginx
           - examples/drupal11
+          - examples/drupal11-mysql84
           - examples/drupal11-nginx
         lando-version:
           - 3-edge
