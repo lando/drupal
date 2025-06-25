@@ -10,8 +10,8 @@ module.exports = {
   parent: '_service',
   builder: parent => class DrupalMysql extends LandoMysql.builder(parent, LandoMysql.config) {
     constructor(id, options = {}) {
-      // Versions of MySQL prior to 8.0 use mysql_native_password authentication
-      if (!options.authentication && semver.lt(semver.coerce(options.version), '8.0.0')) {
+      // Versions of MySQL prior to 8.4 use mysql_native_password authentication
+      if (!options.authentication && semver.lt(semver.coerce(options.version), '8.4.0')) {
         options.authentication = 'mysql_native_password';
       }
 

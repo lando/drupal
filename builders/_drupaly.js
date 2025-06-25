@@ -161,7 +161,7 @@ const getServices = options => ({
 /*
  * Helper to get the phar build command
  */
-const getDbTooling = (database) => {
+const getDbTooling = database => {
   const [db, ver] = database.split(':');
   // Choose wisely
   if (db === 'mysql') {
