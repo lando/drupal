@@ -1,5 +1,6 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated MySQL config for better MySQL 8.4 support.
 * Added default config values to the `.lando.yml` file after init.
 * Removed `semver` dependency from the plugin.
 

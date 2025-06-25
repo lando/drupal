@@ -1,7 +1,7 @@
 'use strict';
 
 const _ = require('lodash');
-const LandoMariadb = require('./../node_modules/@lando/mariadb/builders/mariadb.js');
+const LandoMariadb = require('@lando/mariadb/builders/mariadb.js');
 
 // Builder
 module.exports = {

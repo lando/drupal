@@ -146,7 +146,7 @@ const getServices = options => ({
   },
   database: {
     config: getServiceConfig(options, ['database']),
-    authentication: 'mysql_native_password',
+    authentication: '',
     type: `drupal-${options.database}`,
     portforward: true,
     creds: {
@@ -165,20 +165,20 @@ const getDbTooling = (database, options) => {
   const [db, ver] = database.split(':');
   // Choose wisely
   if (db === 'mysql') {
-    return { mysql: mysqlCli };
+    return {mysql: mysqlCli};
   } else if (db === 'mariadb' && semver.lt(semver.coerce(ver), '10.4.0')) {
     // Use mysql command for MariaDB 10.3.x and below
-    return { mysql: mysqlCli };
+    return {mysql: mysqlCli};
   } else if (db === 'mariadb') {
-    return { mariadb: mariadbCli };
+    return {mariadb: mariadbCli};
   } else if (db === 'postgres') {
-    return { psql: postgresCli };
+    return {psql: postgresCli};
   } else if (db === 'mongo') {
     return {
       mongo: {
         service: 'database',
         description: 'Drop into the mongo shell',
-      }
+      },
     };
   }
 };
@@ -192,7 +192,7 @@ const getProxy = (options, proxyService = 'appserver') => {
   // add
   urls.push(`${options.app}.${options._app._config.domain}`);
   // return
-  return { [proxyService]: _.uniq(_.compact(urls)) };
+  return {[proxyService]: _.uniq(_.compact(urls))};
 };
 
 /*
@@ -236,7 +236,7 @@ module.exports = {
     tooling: {
       drush: {
         service: 'appserver',
-      }
+      },
     },
     via: 'apache:2.4',
     webroot: '.',
@@ -275,8 +275,8 @@ module.exports = {
               SIMPLETEST_BASE_URL: (options.via === 'nginx') ? 'https://appserver_nginx' : 'https://appserver',
               SIMPLETEST_DB: `mysql://${options.recipe}:${options.recipe}@database/${options.recipe}`,
             },
-          }
-        }
+          },
+        },
       });
 
       // Switch the proxy service if needed
