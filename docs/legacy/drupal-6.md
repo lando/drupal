@@ -1,5 +1,5 @@
 ---
-description: Lando docs for Drupal 8 (legacy version).
+description: Lando docs for Drupal 6 (legacy version).
 ---
 
 # Drupal 6
