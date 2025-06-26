@@ -10,13 +10,13 @@ While Lando [recipes](https://docs.lando.dev/landofile/recipes.html) set sane de
 Here are the configuration options, set to the default values, for this recipe's [Landofile](https://docs.lando.dev/landofile/). If you are unsure about where this goes or what this means we *highly recommend* scanning the [recipes documentation](https://docs.lando.dev/landofile/recipes.html) to get a good handle on how the magicks work.
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
-  php: '8.0'
-  composer_version: '2-latest'
+  php: '8.3'
+  composer_version: 2-latest
   via: apache:2.4
   webroot: .
-  database: mysql:5.7
+  database: mysql:8.0
   drush: false
   xdebug: false
   config:
@@ -48,12 +48,12 @@ You can set `php` to any version that is available in our [php service](https://
 
 However, you should consult the [Drupal requirements](https://www.drupal.org/docs/getting-started/system-requirements) to make sure that the version of `php` you choose is actually supported by the version of `drupal` you are running.
 
-Here is the [recipe config](https://docs.lando.dev/landofile/recipes.html#config) to set the Drupal 9 recipe to use `php` version `7.4`
+Here is the [recipe config](https://docs.lando.dev/landofile/recipes.html#config) to set the Drupal 11 recipe to use `php` version `8.4`
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
-  php: '7.4'
+  php: '8.4'
 ```
 
 ## Choosing a composer version
@@ -61,9 +61,9 @@ config:
 You can set `composer_version` to any version that is available in our [php service](https://docs.lando.dev/plugins/php/config.html#installing-composer).
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
-  composer_version: '1.10.1'
+  composer_version: '2.10.1'
 ```
 
 By default, Drupal 9 and above use the latest version of Composer 2.x.
@@ -75,17 +75,17 @@ By default this recipe will be served by the default version of our [apache](htt
 #### With Apache (default)
 
 ```yaml
-recipe: drupal9
+recipe: drupal22
 config:
-  via: apache
+  via: apache:2.4
 ```
 
 #### With nginx
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
-  via: nginx
+  via: nginx:1.29
 ```
 
 ## Choosing a database backend
@@ -99,45 +99,37 @@ Also note that like the configuration of the `php` version you should consult th
 #### Using MySQL (default)
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
-  database: mysql
+  database: mysql:8.4
 ```
 
 #### Using MariaDB
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
-  database: mariadb
+  database: mariadb:10.11
 ```
 
 #### Using Postgres
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
-  database: postgres
-```
-
-#### Using a custom version
-
-```yaml
-recipe: drupal9
-config:
-  database: mariadb:10.4
+  database: postgres:17.5
 ```
 
 ## Connecting to your database
 
 Lando will automatically set up a database with a user and password and also set an environment variables called [`LANDO INFO`](https://docs.lando.dev/guides/lando-info.html) that contains useful information about how your application can access other Lando services.
 
-Here is the default database connection information for a Drupal 9 site. Note that the `host` is not `localhost` but `database`. Also note that you will want to replace `drupal9` if you are using a different major version of Drupal eg `drupal8` for Drupal 8.
+Here is the default database connection information for a Drupal 11 site. Note that the `host` is not `localhost` but `database`. Also note that you will want to replace `drupal11` if you are using a different major version of Drupal eg `drupal10` for Drupal 10.
 
 ```yaml
-database: drupal9
-username: drupal9
-password: drupal9
+database: drupal11
+username: drupal11
+password: drupal11
 host: database
 # for mysql
 port: 3306
@@ -171,10 +163,10 @@ Note that you can put your configuration files anywhere inside your application 
 |-- .lando.yml
 ```
 
-**Landofile using custom drupal9 config**
+**Landofile using custom drupal11 config**
 
 ```yaml
-recipe: drupal9
+recipe: drupal11
 config:
   config:
     database: config/my-custom.cnf
