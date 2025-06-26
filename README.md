@@ -54,7 +54,7 @@ We try to log all changes big and small in both [THE CHANGELOG](https://github.c
 
 ## Development
 
-* Requires [Node 14+](https://nodejs.org/dist/latest-v20.x/)
+* Requires [Node 20+](https://nodejs.org/dist/latest-v20.x/)
 
 ```bash
 git clone https://github.com/lando/drupal.git && cd drupal
