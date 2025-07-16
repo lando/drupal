@@ -3,6 +3,12 @@ name: Drupal Tests
 on:
   pull_request:
   workflow_dispatch:
+    inputs:
+      lando-version:
+        description: 'Lando version'
+        required: true
+        default: '3-edge'
+        type: string
 
 jobs:
   leia-tests:
