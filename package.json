@@ -3,7 +3,7 @@
   "description": "A Lando plugin that provides a tight integration with Drupal.",
   "version": "1.12.0",
   "author": "Mike Pirog @pirog",
-  "license": "GPL-3.0",
+  "license": "MIT",
   "repository": "lando/drupal",
   "bugs": "https://github.com/lando/drupal/issues/new/choose",
   "homepage": "https://github.com/lando/drupal",
