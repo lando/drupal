@@ -82,7 +82,7 @@ npm release
 
 * [@pirog](https://github.com/pirog)
 * [@reynoldsalec](https://github.com/reynoldsalec)
-* [@AaronFeledy](https://github.com/AaronFeledy
+* [@AaronFeledy](https://github.com/AaronFeledy)
 
 ## Contributors
 
