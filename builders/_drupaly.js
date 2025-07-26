@@ -242,6 +242,7 @@ module.exports = {
     webroot: '.',
     xdebug: false,
     proxy: {},
+    drush_uri: null,
   },
   builder: (parent, config) => class LandoDrupal extends parent {
     constructor(id, options = {}) {
@@ -289,6 +290,21 @@ module.exports = {
       options.proxy = _.merge({}, getProxy(options, options.proxyService), options.proxy);
       options.services = _.merge({}, getServices(options), options.services);
       options.tooling = _.merge({}, getTooling(options), options.tooling);
+
+      // Set DRUSH_OPTIONS_URI based on drush_uri config or proxy settings
+      let drushUri = options.drush_uri;
+      if (!drushUri) {
+        const proxyUrl = options.proxy.appserver_nginx?.[0] || options.proxy.appserver?.[0];
+        if (proxyUrl) {
+          const ssl = options.services.appserver_nginx?.ssl || options.services.appserver?.ssl;
+          drushUri = ssl ? `https://${proxyUrl}` : `http://${proxyUrl}`;
+        }
+      }
+
+      if (drushUri) {
+        options.services.appserver.environment = options.services.appserver.environment || {};
+        options.services.appserver.environment.DRUSH_OPTIONS_URI = drushUri;
+      }
 
       // Send downstream
       super(id, _.merge({}, config, options));
