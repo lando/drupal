@@ -13,11 +13,12 @@ Here are the configuration options, set to the default values, for this recipe's
 recipe: drupal11
 config:
   php: '8.3'
-  composer_version: 2-latest
+  composer_version: '2-latest'
   via: apache:2.4
-  webroot: .
-  database: mysql:8.0
-  drush: false
+  webroot: public
+  database: mysql:8.4
+  drush: ^13
+  drush_uri: SEE BELOW
   xdebug: false
   config:
     database: SEE BELOW
@@ -139,6 +140,15 @@ port: 3306
 
 You can get also get the above information, and more, by using the [`lando info`](https://docs.lando.dev/cli/info.html) command.
 
+## Configuring Drush URI
+
+The `drush_uri` option allows you to set a custom URL for Drush to use when connecting to your Drupal site. This overrides the `DRUSH_OPTIONS_URI` environment variable in the `appserver` service which, by default, is automatically set to the proxy URL for the webserver you are using. You will need to run `lando rebuild` to apply changes to this setting.
+
+```yaml
+recipe: drupal11
+config:
+  drush_uri: 'https://custom-uri.lndo.site'
+```
 
 ## Using custom config files
 
