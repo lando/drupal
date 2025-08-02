@@ -21,6 +21,7 @@ jobs:
         leia-test:
           - examples/drupal-custom
           - examples/drupal-defaults
+          - examples/drupal-drush-uri
           - examples/drupal-export
           - examples/drupal-import
           - examples/drupal-mariadb
