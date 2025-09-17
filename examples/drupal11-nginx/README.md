@@ -35,9 +35,9 @@ lando exec appserver -- curl -L appserver_nginx | grep "Drupal 11"
 cd nginx
 lando php -v | grep "PHP 8.3"
 
-# Should be running nginx 1.25 by default
+# Should be running nginx 1.29 by default
 cd nginx
-lando exec appserver_nginx -- nginx -v 2>&1 | grep 1.25
+lando exec appserver_nginx -- nginx -v 2>&1 | grep 1.29
 lando exec appserver -- curl -IL appserver_nginx | grep Server | grep nginx
 
 # Should be running mysql 8.0.x by default

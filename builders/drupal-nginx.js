@@ -8,7 +8,7 @@ module.exports = {
   name: 'drupal-nginx',
   parent: '_webserver',
   config: {
-    version: '1.25',
+    version: '1.29',
   },
   builder: (parent, config) => class DrupalNginx extends PhpNginx.builder(parent, PhpNginx.config) {
     constructor(id, options = {}) {

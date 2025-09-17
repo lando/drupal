@@ -70,7 +70,7 @@ By default, Drupal 9 and above use the latest version of Composer 2.x.
 
 ## Choosing a webserver
 
-By default this recipe will be served by the default version of our [apache](https://docs.lando.dev/plugins/apache) service but you can also switch this to use [`nginx`](https://docs.lando.dev/plugins/nginx). We *highly recommend* you check out both the [apache](https://docs.lando.dev/plugins/apache) and [nginx](https://docs.lando.dev/plugins/nginx) services before you change the default `via`.
+By default this recipe will be served by the default version of our [apache](https://docs.lando.dev/plugins/apache/index.html) service but you can also switch this to use [`nginx`](https://docs.lando.dev/plugins/nginx/index.html). We *highly recommend* you check out both the [apache](https://docs.lando.dev/plugins/apache/index.html) and [nginx](https://docs.lando.dev/plugins/nginx/index.html) services before you change the default `via`.
 
 #### With Apache (default)
 
@@ -90,9 +90,9 @@ config:
 
 ## Choosing a database backend
 
-By default this recipe will use the default version of our [mysql](https://docs.lando.dev/plugins/mysql) service as the database backend but you can also switch this to use [`mariadb`](https://docs.lando.dev/plugins/mariadb) or [`postgres`](https://docs.lando.dev/plugins/postgres) instead. Note that you can also specify a version *as long as it is a version available for use with lando* for either `mysql`, `mariadb` or `postgres`.
+By default this recipe will use the default version of our [mysql](https://docs.lando.dev/plugins/mysql/index.html) service as the database backend but you can also switch this to use [`mariadb`](https://docs.lando.dev/plugins/mariadb/index.html) or [`postgres`](https://docs.lando.dev/plugins/postgres/index.html) instead. Note that you can also specify a version *as long as it is a version available for use with lando* for either `mysql`, `mariadb` or `postgres`.
 
-If you are unsure about how to configure the `database` we *highly recommend* you check out the [`mysql`](https://docs.lando.dev/plugins/mysql), [`mariadb`](https://docs.lando.dev/plugins/mariadb) and [`postgres`](https://docs.lando.dev/plugins/postgres) services before you change the default.
+If you are unsure about how to configure the `database` we *highly recommend* you check out the [`mysql`](https://docs.lando.dev/plugins/mysql/index.html), [`mariadb`](https://docs.lando.dev/plugins/mariadb/index.html) and [`postgres`](https://docs.lando.dev/plugins/postgres/index.html) services before you change the default.
 
 Also note that like the configuration of the `php` version you should consult the [Drupal requirements](https://www.drupal.org/docs/getting-started/system-requirements) to make sure the `database` and `version` you select is actually supported by the version of Drupal you are using.
 
