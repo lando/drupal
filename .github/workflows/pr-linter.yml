@@ -13,7 +13,6 @@ jobs:
         node-version:
           - '20'
     steps:
-      # Install deps and cache
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install node ${{ matrix.node-version }}
@@ -23,7 +22,5 @@ jobs:
           cache: npm
       - name: Install NPM dependencies
         run: npm clean-install --prefer-offline --frozen-lockfile
-
-      # Run the linter
       - name: Run code linter
         run: npm run lint

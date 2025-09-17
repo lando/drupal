@@ -14,11 +14,11 @@ lando poweroff
 
 # Should initialize the latest Drupal 11 codebase
 rm -rf drupal11 && mkdir -p drupal11 && cd drupal11
-cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-11.2.x-dev.tar.gz --remote-options="--strip-components 1" --recipe drupal11 --webroot . --name lando-drupal11 --option database=mysql:8.4
 
 # Should start up successfully
 cd drupal11
+cp -f ../../.lando.upstream.yml .lando.upstream.yml && cat .lando.upstream.yml
 lando start
 ```
 

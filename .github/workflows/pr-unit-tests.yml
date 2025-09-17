@@ -12,11 +12,10 @@ jobs:
         os:
           - windows-2022
           - ubuntu-24.04
-          - macos-14
+          - macos-15
         node-version:
           - '20'
     steps:
-      # Install deps and cache
       - name: Checkout code
         uses: actions/checkout@v4
       - name: Install node ${{ matrix.node-version }}
@@ -26,7 +25,5 @@ jobs:
           cache: npm
       - name: Install NPM dependencies
         run: npm clean-install --prefer-offline --frozen-lockfile
-
-      # Run unit tests
       - name: Run unit tests
         run: npm run test:unit
