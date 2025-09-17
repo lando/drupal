@@ -44,7 +44,7 @@ config:
 
 ## Choosing a PHP version
 
-You can set `php` to any version that is available in our [php service](https://docs.lando.dev/plugins/php/).
+You can set `php` to any version that is available in our [php service](https://docs.lando.dev/plugins/php/index.html).
 
 However, you should consult the [Drupal requirements](https://www.drupal.org/docs/getting-started/system-requirements) to make sure that the version of `php` you choose is actually supported by the version of `drupal` you are running.
 

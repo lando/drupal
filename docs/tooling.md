@@ -104,7 +104,7 @@ config:
   xdebug: true|false
 ```
 
-However, for more information we recommend you consult the [php service documentation](https://docs.lando.dev/plugins/php).
+However, for more information we recommend you consult the [php service documentation](https://docs.lando.dev/plugins/php/index.html).
 
 
 ## Importing Your Database
