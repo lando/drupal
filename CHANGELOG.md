@@ -1,5 +1,8 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Updated to [@lando/mariadb@1.8.0](https://github.com/lando/mariadb/releases/tag/v1.8.0)
+* Updated to [@lando/postgres@1.6.0](https://github.com/lando/postgres/releases/tag/v1.6.0)
+
 ## v1.13.0 - [September 17, 2025](https://github.com/lando/drupal/releases/tag/v1.13.0)
 
 * Added default config values to the `.lando.yml` file after init.
