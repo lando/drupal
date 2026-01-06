@@ -69,6 +69,10 @@ lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 cd drupal10
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
 
+# Should use default drush_uri based on proxy settings
+cd drupal10
+lando drush uli --no-browser | tee >(cat 1>&2) | grep "lando-drupal10.lndo.site"
+
 # Should be able to enable and access jsonapi
 cd drupal10
 lando drush en jsonapi -y

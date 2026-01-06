@@ -50,9 +50,9 @@ lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
 cd drupal11
 lando mysql -V | grep 8.0
 
-# Should be running sqlite 3.45 by default
+# Should be running sqlite 3.46 by default
 cd drupal11
-lando php -r "print_r(SQLite3::version());" | grep versionString | tee >(cat 1>&2) | grep 3.45
+lando php -r "print_r(SQLite3::version());" | grep versionString | tee >(cat 1>&2) | grep 3.46.
 
 # Should not enable xdebug by default
 cd drupal11
@@ -74,6 +74,10 @@ lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 # Should be able to install drupal
 cd drupal11
 lando drush si --db-url=mysql://drupal11:drupal11@database/drupal11 -y
+
+# Should use default drush_uri based on proxy settings
+cd drupal11
+lando drush uli --no-browser | tee >(cat 1>&2) | grep "lando-drupal11.lndo.site"
 
 # Should be able to enable and access jsonapi
 cd drupal11

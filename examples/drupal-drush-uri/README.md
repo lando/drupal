@@ -31,6 +31,11 @@ Run the following commands to validate things are rolling as they should.
 cd drupal-drush-uri
 lando exec appserver -- env | grep DRUSH_OPTIONS_URI | grep "https://lando-drupal-drush-uri.lndo.site"
 
+# Should use site-local drush if installed
+cd drupal-drush-uri
+lando composer require drush/drush
+lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
+
 # Should be able to install drupal
 cd drupal-drush-uri
 lando drush si --db-url=mysql://drupal10:drupal10@database/drupal10 -y
@@ -61,6 +66,11 @@ lando rebuild -y
 # Should use custom drush_uri
 cd drupal-drush-uri
 lando exec appserver -- env | grep DRUSH_OPTIONS_URI | grep "https://custom-uri.lndo.site"
+
+# Should use site-local drush if installed
+cd drupal-drush-uri
+lando composer require drush/drush
+lando exec appserver -- which drush | grep "/app/vendor/bin/drush"
 
 # Should be able to use drush with custom uri
 cd drupal-drush-uri
