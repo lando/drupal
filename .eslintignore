@@ -3,3 +3,8 @@ cache
 dist
 _site
 !.vitepress
+
+# Examples are executable integration specs; they can generate full Drupal codebases under examples/*/*
+# which include their own ESLint config/deps that we do not install in this repo.
+examples/**
+examples/*/*/**

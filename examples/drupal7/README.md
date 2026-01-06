@@ -14,7 +14,7 @@ lando poweroff
 
 # Should initialize the latest Drupal 7 codebase
 rm -rf drupal7 && mkdir -p drupal7 && cd drupal7
-lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-7.71.tar.gz --remote-options="--strip-components 1" --recipe drupal7 --webroot . --name lando-drupal7 --option drush="^8"
+lando init --source remote --remote-url https://ftp.drupal.org/files/projects/drupal-7.103.tar.gz --remote-options="--strip-components 1" --recipe drupal7 --webroot . --name lando-drupal7
 
 # Should start up successfully
 cd drupal7
@@ -34,16 +34,16 @@ lando exec appserver -- curl -L localhost | grep "Drupal 7"
 
 # Should use 7.4 as the default php version
 cd drupal7
-lando php -v | grep "PHP 7.4"
+lando php -v | tee >(cat 1>&2) | grep "PHP 7.4"
 
 # Should be running apache 2.4 by default
 cd drupal7
-lando exec appserver -- apachectl -V | grep 2.4
-lando exec appserver -- curl -IL localhost | grep Server | grep 2.4
+lando exec appserver -- apachectl -V | tee >(cat 1>&2) | grep 2.4
+lando exec appserver -- curl -IL localhost | grep Server | tee >(cat 1>&2) | grep 2.4
 
 # Should be running mysql 5.7 by default
 cd drupal7
-lando mysql -V | grep 5.7
+lando mysql -V | tee >(cat 1>&2) | grep 5.7
 
 # Should be using the mysql_native_password authentication plugin by default
 cd drupal7
@@ -59,7 +59,7 @@ lando mysql -udrupal7 -pdrupal7 drupal7 -e quit
 
 # Should use drush 8.5.x by default
 cd drupal7
-lando drush version | grep 8.5
+lando drush version | tee >(cat 1>&2) | grep 8.5
 
 # Should be able to install drupal
 cd drupal7
@@ -67,7 +67,7 @@ lando drush si --db-url=mysql://drupal7:drupal7@database/drupal7 -y
 
 # Should have infinite memory for drush
 cd drupal7
-lando drush eval "phpinfo();" | grep memory_limit | grep -e "-1"
+lando drush eval "phpinfo();" | grep memory_limit | tee >(cat 1>&2) | grep -e "-1"
 
 # Should have SIMPLETEST envvars set correctly
 cd drupal7
