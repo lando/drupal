@@ -294,9 +294,11 @@ module.exports = {
       // Set DRUSH_OPTIONS_URI based on drush_uri config or proxy settings
       let drushUri = options.drush_uri;
       if (!drushUri) {
-        const proxyUrl = options.proxy.appserver_nginx?.[0] || options.proxy.appserver?.[0];
+        const proxyUrl = options.proxy[options.proxyService]?.[0];
         if (proxyUrl) {
-          const ssl = options.services.appserver_nginx?.ssl || options.services.appserver?.ssl;
+          // Check SSL setting for the proxy service
+          const proxyServiceSsl = options.services[options.proxyService]?.ssl;
+          const ssl = proxyServiceSsl !== undefined ? proxyServiceSsl : options.services.appserver?.ssl;
           drushUri = ssl ? `https://${proxyUrl}` : `http://${proxyUrl}`;
         }
       }

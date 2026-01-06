@@ -77,7 +77,7 @@ config:
 
 While Lando will globally install Drush for you it is increasingly common and in some cases a straight-up best practice to [install a site-local Drush](https://www.drush.org/latest/install/) by requiring it in your projects `composer.json` file.
 
-Because of how Lando's [php service](https://docs.lando.dev/plugins/php) sets up its [`PATH`](https://docs.lando.dev/plugins/php/caveats.html) this means that if you have indeed installed Drush on your own via `composer` Lando will use yours over its own.
+Because of how Lando's [php service](https://docs.lando.dev/plugins/php/index.html) sets up its [`PATH`](https://docs.lando.dev/plugins/php/caveats.html) this means that if you have indeed installed Drush on your own via `composer` Lando will use yours over its own.
 
 Said more explicitly: **if you've required `drush` via `composer` in your application then this recipe will use your `drush` and not the one you've specified in this recipes config.**
 

@@ -15,7 +15,7 @@
       "CHANGELOG.html",
       "x.com",
       "twitter.com",
-      "https://www.drupal.org",
+      "drupal.org",
       "/v/"
     ]
     skipPatterns = [ ".rss", ".gif", ".jpg" ]
