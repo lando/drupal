@@ -1,8 +1,16 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-* Added `drush_uri` configuration option to set `DRUSH_OPTIONS_URI` environment variable in the appserver service.
+* Added `drush_uri` configuration option to set `DRUSH_OPTIONS_URI` environment variable in the appserver service with SSL support
+* Updated to [@lando/php@1.10.0](https://github.com/lando/php/releases/tag/v1.10.0)
 * Updated to [@lando/mariadb@1.8.0](https://github.com/lando/mariadb/releases/tag/v1.8.0)
 * Updated to [@lando/postgres@1.6.0](https://github.com/lando/postgres/releases/tag/v1.6.0)
+* Updated to [@lando/argv@1.2.0](https://github.com/lando/argv/releases/tag/v1.2.0)
+* Fixed release workflow to trigger npm publish on `published` event
+* Fixed drupal-multisite docs [#175](https://github.com/lando/drupal/pull/175)
+* Updated documented dependency versions
+* Updated supported PHP version range to 8.5+
+* Added dependabot config
+* Bumped actions group (checkout, setup-node, cache)
 
 ## v1.13.0 - [September 17, 2025](https://github.com/lando/drupal/releases/tag/v1.13.0)
 
