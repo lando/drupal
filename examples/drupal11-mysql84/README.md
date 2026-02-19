@@ -47,12 +47,12 @@ lando php -v | grep "PHP 8.3"
 
 # Should be running apache 2.4 by default
 cd drupal11
-lando exec appserver -- apachectl -V | grep '2.4'
-lando exec appserver -- curl -IL localhost | grep Server | grep '2.4'
+lando exec appserver -- apachectl -V | tee >(cat 1>&2) | grep '2.4'
+lando exec appserver -- curl -IL localhost | grep Server | tee >(cat 1>&2) | grep '2.4'
 
-# Should be running sqlite 3.45 by default
+# Should be running sqlite 3.46 by default
 cd drupal11
-lando php -r "print_r(SQLite3::version());" | grep versionString | tee >(cat 1>&2) | grep 3.45
+lando php -r "print_r(SQLite3::version());" | grep versionString | tee >(cat 1>&2) | grep 3.46.
 
 # Should not enable xdebug by default
 cd drupal11
