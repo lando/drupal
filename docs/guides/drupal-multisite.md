@@ -36,13 +36,13 @@ Create proxies for each multisite in the appserver array in your `.lando.yml` fi
 proxy:
   appserver:
     - site1.lndo.site
-    - site2.lndo.s
+    - site2.lndo.site
 services:
   site1:
     type: mysql:5.7
     portforward: 33068
     config:
-      confd: lando/mysql/conf.d
+      confd: .lando/mysql/conf.d
   site2:
     type: mysql:5.7
     portforward: 33069
@@ -73,7 +73,7 @@ $databases['default']['default']['host'] = 'site1';
 ```
 
 ::: warning If you're on Acquia...
-You must specify $_Server['PWD']=DRUPAL_ROOT if you use Drush 9 on Acquia (this may apply to some other hosts as well). Update your main `sites/default/settings.php` to tell our local Drupal to use the `/settings/settings.local.php` within each subsite:
+You must specify $_SERVER['PWD']=DRUPAL_ROOT if you use Drush 9 on Acquia (this may apply to some other hosts as well). Update your main `sites/default/settings.php` to tell our local Drupal to use the `/settings/settings.local.php` within each subsite:
 
 ```php
 if (!key_exists('AH_SITE_ENVIRONMENT', $_ENV)) {
