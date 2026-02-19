@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.14.0 - [February 19, 2026](https://github.com/lando/drupal/releases/tag/v1.14.0)
+
 * Added `drush_uri` configuration option to set `DRUSH_OPTIONS_URI` environment variable in the appserver service with SSL support
 * Updated `@lando/php` to `^1.11.0` for MySQL client auto-detection fix
 * Updated to [@lando/php@1.10.0](https://github.com/lando/php/releases/tag/v1.10.0)
