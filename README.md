@@ -3,7 +3,7 @@
 This is the _official_ [Lando](https://lando.dev) plugin for [Drupal](https://www.drupal.org/). When installed it...
 
 * Allows users to run `drupal` cms
-* Allows users to configure `php` version from `5.3` all the way to `8.4+`
+* Allows users to configure `php` version from `5.3` all the way to `8.5+`
 * Allows users to configure `webroot`
 * Allows users to configure web server to (`apache` or `nginx`)
 * Allows users to configure database backend to (`mariadb`, `mysql`, or `postgres`)
