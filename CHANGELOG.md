@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.14.1 - [February 20, 2026](https://github.com/lando/drupal/releases/tag/v1.14.1)
+
 * Updated to [@lando/php@1.11.1](https://github.com/lando/php/releases/tag/v1.11.1)
 
 ## v1.14.0 - [February 19, 2026](https://github.com/lando/drupal/releases/tag/v1.14.0)
