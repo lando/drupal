@@ -299,7 +299,17 @@ module.exports = {
           // Check SSL setting for the proxy service
           const proxyServiceSsl = options.services[options.proxyService]?.ssl;
           const ssl = proxyServiceSsl !== undefined ? proxyServiceSsl : options.services.appserver?.ssl;
-          drushUri = ssl ? `https://${proxyUrl}` : `http://${proxyUrl}`;
+          const protocol = ssl ? 'https' : 'http';
+          // Include port if non-standard (e.g. proxy on 444 instead of 443)
+          const ports = _.get(options, '_app._config.proxyLastPorts');
+          let port = '';
+          if (ports) {
+            const activePort = ssl ? ports.https : ports.http;
+            if (activePort && ((ssl && activePort !== '443') || (!ssl && activePort !== '80'))) {
+              port = `:${activePort}`;
+            }
+          }
+          drushUri = `${protocol}://${proxyUrl}${port}`;
         }
       }
 
