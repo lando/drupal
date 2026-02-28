@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output [#157](https://github.com/lando/drupal/issues/157)
+
 ## v1.14.1 - [February 20, 2026](https://github.com/lando/drupal/releases/tag/v1.14.1)
 
 * Updated to [@lando/php@1.11.1](https://github.com/lando/php/releases/tag/v1.11.1)

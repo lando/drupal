@@ -41,6 +41,9 @@ lando mysql drupal10 -e quit
 # Should use composer 2 by default
 lando exec appserver -- /bin/sh -c 'NO_COLOR=1 composer -V' | grep "Composer version 2."
 
+# Should not include ANSI escape codes when output is redirected
+lando composer --version > /tmp/composer-output.txt 2>&1 && ! grep -P '\x1b\[' /tmp/composer-output.txt
+
 # Should use the correct default config files
 lando exec appserver -- cat /usr/local/etc/php/conf.d/zzz-lando-my-custom.ini | grep "; LANDODRUPALPHPINI"
 lando exec appserver -- curl -L http://localhost/info.php | grep max_execution_time | grep 91
