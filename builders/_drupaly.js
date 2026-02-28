@@ -16,7 +16,7 @@ const DRUSH7 = '7.4.0';
 const toolingDefaults = {
   'composer': {
     service: 'appserver',
-    cmd: 'composer --ansi',
+    cmd: 'composer',
   },
   'db-import <file>': {
     service: ':host',
