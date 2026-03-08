@@ -16,7 +16,8 @@
       "x.com",
       "twitter.com",
       "drupal.org",
-      "/v/"
+      "/v/",
+      "hub.docker.com",
     ]
     skipPatterns = [ ".rss", ".gif", ".jpg" ]
     checkExternal = true
