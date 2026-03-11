@@ -18,7 +18,7 @@ Of course, once a user is running their Drupal project with Lando they can take 
 Add a `drupal11` recipe to your Landofile
 
 ```yaml
-name: Drupal 11
+name: my-cms
 recipe: drupal11
 config:
   php: 8.3
@@ -82,7 +82,7 @@ npm release
 
 * [@pirog](https://github.com/pirog)
 * [@reynoldsalec](https://github.com/reynoldsalec)
-* [@AaronFeledy](https://github.com/AaronFeledy)
+* [@aaronfeledy](https://github.com/AaronFeledy)
 
 ## Contributors
 
