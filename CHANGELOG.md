@@ -1,5 +1,7 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+## v1.15.0 - [March 11, 2026](https://github.com/lando/drupal/releases/tag/v1.15.0)
+
 * Fixed `drush_uri` to include non-standard proxy ports [#180](https://github.com/lando/drupal/pull/180)
 * Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output [#157](https://github.com/lando/drupal/issues/157)
 * Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) to enable mod_headers/mod_expires by default and fix xdebug log ownership
