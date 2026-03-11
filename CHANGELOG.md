@@ -1,7 +1,10 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
-* Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) for mod_headers/mod_expires and xdebug log fix
+* Fixed `drush_uri` to include non-standard proxy ports [#180](https://github.com/lando/drupal/pull/180)
+* Fixed port comparison to handle numeric values from proxy cache
+* Fixed race condition in release promote job [#182](https://github.com/lando/drupal/pull/182)
 * Removed `--ansi` flag from composer tooling command to prevent escape codes in redirected output [#157](https://github.com/lando/drupal/issues/157)
+* Updated to [@lando/php@1.12.0](https://github.com/lando/php/releases/tag/v1.12.0) to enable mod_headers/mod_expires by default and fix xdebug log ownership
 
 ## v1.14.1 - [February 20, 2026](https://github.com/lando/drupal/releases/tag/v1.14.1)
 
