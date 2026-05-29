@@ -294,7 +294,8 @@ module.exports = {
       // Set DRUSH_OPTIONS_URI based on drush_uri config or proxy settings
       let drushUri = options.drush_uri;
       if (!drushUri) {
-        const proxyUrl = options.proxy[options.proxyService]?.[0];
+        // Get hostname only, in-case of added port number.
+        const proxyUrl = utils.getProxyHostname(options.proxy[options.proxyService]?.[0]);
         if (proxyUrl) {
           // Check SSL setting for the proxy service
           const proxyServiceSsl = options.services[options.proxyService]?.ssl;
