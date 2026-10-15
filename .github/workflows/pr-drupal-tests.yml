@@ -34,6 +34,7 @@ jobs:
           - examples/drupal9
           - examples/drupal10
           - examples/drupal10-mysql8
+          - examples/drupal10-mysql84
           - examples/drupal10-nginx
           - examples/drupal11
           - examples/drupal11-mysql84
@@ -76,3 +77,4 @@ jobs:
           cleanup-header: "Destroy tests"
           shell: bash
           stdin: true
+          version: 1.0.0-beta.4

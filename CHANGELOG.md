@@ -1,5 +1,9 @@
 ## {{ UNRELEASED_VERSION }} - [{{ UNRELEASED_DATE }}]({{ UNRELEASED_LINK }})
 
+* Fixed MySQL 8.2+ startup failure by replacing removed `expire_logs_days` with `binlog_expire_logs_seconds` [#186](https://github.com/lando/drupal/issues/186)
+* Fixed `mysql:8` startup failure by using the MySQL 8 config instead of the 5.7 config
+* Fixed `mysql:8` startup failure by skipping `mysql_native_password` authentication on MySQL 8.4
+
 ## v1.15.0 - [March 11, 2026](https://github.com/lando/drupal/releases/tag/v1.15.0)
 
 * Fixed `drush_uri` to include non-standard proxy ports [#180](https://github.com/lando/drupal/pull/180)
