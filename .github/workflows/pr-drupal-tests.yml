@@ -77,3 +77,4 @@ jobs:
           cleanup-header: "Destroy tests"
           shell: bash
           stdin: true
+          version: 1.0.0-beta.4
