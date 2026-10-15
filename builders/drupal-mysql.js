@@ -11,7 +11,9 @@ module.exports = {
   builder: parent => class DrupalMysql extends LandoMysql.builder(parent, LandoMysql.config) {
     constructor(id, options = {}) {
       // Versions of MySQL prior to 8.4 use mysql_native_password authentication
-      if (!options.authentication && semver.lt(semver.coerce(options.version), '8.4.0')) {
+      // Compare the pinned image version so aliases like `8` resolve to the MySQL they run
+      const version = LandoMysql.config.pinPairs[options.version] || options.version;
+      if (!options.authentication && semver.lt(semver.coerce(version), '8.4.0')) {
         options.authentication = 'mysql_native_password';
       }
 
