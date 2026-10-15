@@ -34,6 +34,7 @@ jobs:
           - examples/drupal9
           - examples/drupal10
           - examples/drupal10-mysql8
+          - examples/drupal10-mysql84
           - examples/drupal10-nginx
           - examples/drupal11
           - examples/drupal11-mysql84
